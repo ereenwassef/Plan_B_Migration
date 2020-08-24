@@ -1,0 +1,2910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Plan_BModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Cost" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Cost_With_Tax" Type="int" />
+    <Property Name="Cost_With_Tax_Details" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Acc_Banks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Account_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Account_Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Swift_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Acc_Compny_Balance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Is_Bank" Type="bit" />
+    <Property Name="Treasury_Bank_ID" Type="int" />
+    <Property Name="Debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Money_Type_ID" Type="int" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Acc_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Acc_Items_Main">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="Item_ID" Type="int" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Acc_Items_Sub">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="Item_ID" Type="int" />
+    <Property Name="Item_Main_ID" Type="int" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Acc_Main_Expense">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Item_ID" Type="int" />
+    <Property Name="Main_Item_ID" Type="int" />
+    <Property Name="Sub_Item_ID" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Default_Price" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Acc_Main_Income">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Item_ID" Type="int" />
+    <Property Name="Main_Item_ID" Type="int" />
+    <Property Name="Sub_Item_ID" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Default_Price" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Acc_Money_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Acc_Sub_Expense">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Main_Expense_ID" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Default_Price" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Acc_Sub_Income">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Main_Income_ID" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Default_Price" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Acc_Treasury">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Acc_Treasury_Bank_Transactions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Transaction_By" Type="int" />
+    <Property Name="Is_Bank" Type="bit" />
+    <Property Name="Treasury_Bank_ID" Type="int" />
+    <Property Name="Item_ID" Type="int" />
+    <Property Name="Item_Main_ID" Type="int" />
+    <Property Name="Item_Sub_ID" Type="int" />
+    <Property Name="Is_Expense" Type="bit" />
+    <Property Name="Income_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Expense_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Main_Item_ID" Type="int" />
+    <Property Name="Sub_Item_ID" Type="int" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Acc_User_Transaction_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Acc_Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Treasury_Bank_ID" Type="int" />
+    <Property Name="Is_Bank" Type="bit" />
+  </EntityType>
+  <EntityType Name="Activated_Distributors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dist_ID" Type="int" />
+    <Property Name="Activated_By_ID" Type="int" />
+    <Property Name="Activation_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Admin_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Last_Login" Type="datetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Action" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Admin_Menus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="URL" Type="nvarchar" MaxLength="350" />
+    <Property Name="Parent_ID" Type="int" />
+    <Property Name="Menu_Order" Type="int" Nullable="false" />
+    <Property Name="Is_Admin" Type="bit" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Admin_User_Menus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Menu_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Admin_User_Pages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Page_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Administrator_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Administrators">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type_ID" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Description" Type="nvarchar" MaxLength="550" />
+    <Property Name="Is_First" Type="bit" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="550" />
+  </EntityType>
+  <EntityType Name="Available_Job">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name_AR" Type="nvarchar" MaxLength="150" />
+    <Property Name="Name_En" Type="nvarchar" MaxLength="150" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Balance_Coupons">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Serial" Type="nvarchar" MaxLength="50" />
+    <Property Name="Scratch_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Activated_To" Type="int" />
+    <Property Name="Activation_Date" Type="smalldatetime" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Sold_To" Type="int" />
+    <Property Name="Sold_Date" Type="smalldatetime" />
+    <Property Name="Sold_by" Type="int" />
+    <Property Name="Used_For" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Best_Profit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Bounce_Date" Type="datetime" />
+    <Property Name="Amount" Type="int" />
+  </EntityType>
+  <EntityType Name="Candidate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Religion" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="PlaceOfBirth" Type="nvarchar" MaxLength="150" />
+    <Property Name="Addreess" Type="nvarchar" MaxLength="350" />
+    <Property Name="Gov_ID" Type="int" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="150" />
+    <Property Name="MaritalStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="MilitaryStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="FatherJob" Type="nvarchar" MaxLength="150" />
+    <Property Name="MotherJob" Type="nvarchar" MaxLength="150" />
+    <Property Name="GeneralServiceStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstUniversityDegree" Type="nvarchar" MaxLength="150" />
+    <Property Name="University" Type="nvarchar" MaxLength="150" />
+    <Property Name="Major" Type="nvarchar" MaxLength="150" />
+    <Property Name="FacultyGrade" Type="nvarchar" MaxLength="150" />
+    <Property Name="GraduationYear" Type="nvarchar" MaxLength="50" />
+    <Property Name="GraduationProject" Type="nvarchar(max)" />
+    <Property Name="Lang1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lang1Deg" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lang2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lang2Deg" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lang3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lang3Deg" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrJobTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrEmployer" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrStartDate" Type="datetime" />
+    <Property Name="CurrEndDate" Type="datetime" />
+    <Property Name="CurrJobDesc" Type="nvarchar(max)" />
+    <Property Name="CurrJobBasicSalary" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrJobSalaryBonus" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrevJobTitle1" Type="nvarchar(max)" />
+    <Property Name="PrevEmployer1" Type="nvarchar(max)" />
+    <Property Name="PrevStartDate1" Type="datetime" />
+    <Property Name="PrevEndDate1" Type="datetime" />
+    <Property Name="PrevJobDesc1" Type="nvarchar(max)" />
+    <Property Name="PrevJobTitle2" Type="nvarchar(max)" />
+    <Property Name="PrevEmployer2" Type="nvarchar(max)" />
+    <Property Name="PrevStartDate2" Type="datetime" />
+    <Property Name="PrevEndDate2" Type="datetime" />
+    <Property Name="PrevJobDesc2" Type="nvarchar(max)" />
+    <Property Name="ExperienceYears" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComputerSkills" Type="nvarchar" MaxLength="50" />
+    <Property Name="Certificate" Type="nvarchar(max)" />
+    <Property Name="Availability" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobCountry" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankOfferdJob_ID" Type="int" />
+    <Property Name="JobField1" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobField2" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalaryAmount" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegDate" Type="datetime" />
+    <Property Name="LastUpdated" Type="datetime" />
+    <Property Name="CVPath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Cashing_Balance_Request">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Request_Date" Type="datetime" />
+    <Property Name="Requested_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="Paid_By" Type="int" />
+    <Property Name="Paid_Date" Type="datetime" />
+    <Property Name="Payment_Gov_ID" Type="int" />
+    <Property Name="Un_Paid" Type="bit" />
+    <Property Name="Un_Paid_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Challenges">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Types" Type="nvarchar" MaxLength="100" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CITY_AR" Type="nvarchar" MaxLength="255" />
+    <Property Name="CITY_EN" Type="nvarchar" MaxLength="255" />
+    <Property Name="Gov_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Commissions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="Commission" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="255" />
+    <Property Name="PhoneCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Customer_Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Is_Done" Type="bit" />
+  </EntityType>
+  <EntityType Name="Customer_Service_Report">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="Referrer_ID" Type="nvarchar" MaxLength="20" />
+    <Property Name="The_Challenge" Type="nvarchar(max)" />
+    <Property Name="The_Response" Type="nvarchar(max)" />
+    <Property Name="Means_Of_Communication_ID" Type="int" />
+    <Property Name="Challenges_ID" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="By_Admin_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Daily_Follow">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lead_Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Gov_ID" Type="int" />
+    <Property Name="Invitation_Type_ID" Type="int" />
+    <Property Name="Invitation_Date" Type="datetime" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Master_ID" Type="int" />
+    <Property Name="Distributor_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Daily_Follow_Invetation_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Plan_B.dbo.Deleted_Distributors' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Deleted_Distributors">
+          <Property Name="ID" Type="int" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Mobile" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="National_ID" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Level_Status" Type="nvarchar(max)" />
+          <Property Name="Upline_ID" Type="int" />
+          <Property Name="Upline_Join_Level" Type="nvarchar(max)" />
+          <Property Name="Upline_History_ID" Type="nvarchar(max)" />
+          <Property Name="Upline_History_Names" Type="nvarchar(max)" />
+          <Property Name="Upline_Branch_Join_Level" Type="nvarchar(max)" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Activation_Date" Type="datetime" />
+          <Property Name="Reset_Token" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password_Updateable" Type="bit" />
+          <Property Name="Gov_ID" Type="int" />
+          <Property Name="City_ID" Type="int" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Referrer_ID" Type="nvarchar" MaxLength="16" />
+          <Property Name="Membership_Status_ID" Type="int" />
+          <Property Name="Country_ID" Type="int" />
+          <Property Name="Registration_Method" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthDate" Type="date" />
+        </EntityType>-->
+  <EntityType Name="Diploma_11">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Grade" Type="nvarchar" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Plan_B.dbo.Diploma_12' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Diploma_12">
+          <Property Name="id" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="grade" Type="nvarchar" MaxLength="255" />
+          <Property Name="notes" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="Diploma_Attendance_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tilte" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Diploma_Cards">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Diploma_ID" Type="int" />
+    <Property Name="Diploma_BarCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Delivered" Type="bit" />
+    <Property Name="Delivered_By" Type="int" />
+    <Property Name="Delivery_Date" Type="datetime" />
+    <Property Name="Is_Partner" Type="bit" />
+  </EntityType>
+  <EntityType Name="Diploma_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Diploma_ID" Type="int" />
+    <Property Name="Course_Location_ID" Type="int" />
+    <Property Name="Attendance_Date" Type="nvarchar(max)" />
+    <Property Name="Number_Of_Dates" Type="int" />
+    <Property Name="Instructor_ID" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Available_Seats" Type="int" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="Starting_Date" Type="datetime" />
+    <Property Name="Allowed_Gov_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Diploma_Grades">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Diploma_Instructors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Diploma_Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Place_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="150" />
+    <Property Name="Students_Count" Type="int" />
+    <Property Name="Account_Manger_Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Account_Manger_Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Diplomas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Service_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Dist_Ranks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Level_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Dist_Rankss">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Level_Status" Type="nvarchar" MaxLength="100" />
+    <Property Name="Right_Side" Type="nvarchar" MaxLength="50" />
+    <Property Name="Left_Side" Type="nvarchar" MaxLength="50" />
+    <Property Name="Month" Type="int" />
+    <Property Name="Reward" Type="int" />
+    <Property Name="Sponsor" Type="int" />
+  </EntityType>
+  <EntityType Name="Dist_Ref">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="National_ID" Type="float" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="Gov_ID" Type="float" />
+    <Property Name="City_ID" Type="float" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="255" />
+    <Property Name="Registration_Method" Type="nvarchar" MaxLength="255" />
+    <Property Name="BirthDate" Type="nvarchar" MaxLength="255" />
+    <Property Name="Activation_2016" Type="float" />
+    <Property Name="Guide_ID" Type="float" />
+  </EntityType>
+  <EntityType Name="Distributor_Authorization_Doc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Doc_Path" Type="nvarchar" MaxLength="350" />
+    <Property Name="Upload_Date" Type="datetime" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Distributor_Browser_Cookie">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Browser_Info" Type="nvarchar(max)" />
+    <Property Name="Edit_Date" Type="datetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Distributor_Diploma_Referrer_Gold">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gov_ID" Type="int" />
+    <Property Name="City_ID" Type="int" />
+    <Property Name="National_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distributor_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Registered_To_Diploma" Type="bit" />
+    <Property Name="Diploma_ID" Type="int" />
+    <Property Name="Is_Confirmed" Type="bit" />
+  </EntityType>
+  <EntityType Name="Distributor_Login_courses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Last_Login" Type="datetime" />
+    <Property Name="course" Type="int" />
+  </EntityType>
+  <EntityType Name="Distributor_Login_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Last_Login" Type="datetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Action" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Distributor_National_ID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="National_ID_Front" Type="nvarchar" MaxLength="350" />
+    <Property Name="National_ID_Back" Type="nvarchar" MaxLength="350" />
+    <Property Name="Upload_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Distributor_Password">
+    <Key>
+      <PropertyRef Name="Distributor_ID" />
+    </Key>
+    <Property Name="Distributor_ID" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reset_Token" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password_Updateable" Type="bit" />
+  </EntityType>
+  <EntityType Name="Distributor_Pending_Activation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="New_Dist_ID" Type="int" />
+    <Property Name="Subscription_Date" Type="datetime" />
+    <Property Name="Subscribed_By" Type="int" />
+    <Property Name="Nearst_NS_ID" Type="int" />
+    <Property Name="Is_Activated" Type="bit" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="Activated_By_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Distributor_Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Product_ID" Type="int" />
+    <Property Name="Request_Date" Type="datetime" />
+    <Property Name="IS_Delivered" Type="bit" />
+    <Property Name="Delivery_Date" Type="datetime" />
+    <Property Name="Is_Main" Type="bit" />
+    <Property Name="Is_Done" Type="bit" />
+  </EntityType>
+  <EntityType Name="Distributor_Relatives">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Relative_Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="Kinship_Degree_ID" Type="int" />
+    <Property Name="Relative_Birth_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Distributor_Serial_Paswword">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Serial" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Reset_Token" Type="nvarchar" MaxLength="50" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="IS_Changed" Type="bit" />
+  </EntityType>
+  <EntityType Name="Distributor_Token">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Token" Type="int" />
+    <Property Name="Creation_Date" Type="datetime" />
+    <Property Name="Is_Used" Type="bit" />
+  </EntityType>
+  <EntityType Name="Distributors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="Mobile" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="National_ID" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Level_Status" Type="nvarchar(max)" />
+    <Property Name="Upline_ID" Type="int" />
+    <Property Name="Upline_Join_Level" Type="nvarchar(max)" />
+    <Property Name="Upline_History_ID" Type="nvarchar(max)" />
+    <Property Name="Upline_History_Names" Type="nvarchar(max)" />
+    <Property Name="Upline_Branch_Join_Level" Type="nvarchar" MaxLength="100" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="Gov_ID" Type="int" />
+    <Property Name="City_ID" Type="int" />
+    <Property Name="Work_Zone" Type="int" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Referrer_ID" Type="nvarchar" MaxLength="16" />
+    <Property Name="Membership_Status_ID" Type="int" />
+    <Property Name="Country_ID" Type="int" />
+    <Property Name="Registration_Method" Type="nvarchar" MaxLength="50" />
+    <Property Name="CanTransferAmount" Type="bit" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="Guide_ID" Type="nvarchar" MaxLength="12" />
+    <Property Name="Street_Name" Type="varchar" MaxLength="350" />
+    <Property Name="Building_No" Type="nvarchar" MaxLength="150" />
+    <Property Name="Floor_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Flat_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Delegated_Dist_ID" Type="int" />
+    <Property Name="Master_Level" Type="nvarchar" MaxLength="10" />
+    <Property Name="Line_Number" Type="int" />
+    <Property Name="Hand_Side" Type="nvarchar" MaxLength="10" />
+    <Property Name="National_ID_Photo" Type="nvarchar" MaxLength="350" />
+    <Property Name="Account_Type" Type="int" />
+    <Property Name="Name_AR" Type="nvarchar" MaxLength="150" />
+    <Property Name="Renewal" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Distributors_Account_Balance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="NS_Transaction_ID" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Distributors_Account_Balance_Sing_Up">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="NS_Transaction_ID" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Distributors_Addon_Coins">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Distributors_Addon_Coins_12-06-2020' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Distributors_Addon_Coins_12-06-2020">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Distributors_Annual_renewal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="Renewal_Date" Type="datetime" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Renewal_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Distributors_Coins_Cash">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Request_Date" Type="datetime" />
+    <Property Name="Coins_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="Paid_By" Type="int" />
+    <Property Name="Paid_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Distributors_Deleted">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="Rollback_Date" Type="datetime" />
+    <Property Name="RollBack_Amount" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Distributors_Diploma">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Diploma_Details_ID" Type="int" />
+    <Property Name="Registration_Date" Type="date" />
+    <Property Name="Grade_ID" Type="int" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Distributors_Diploma_Attendance_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Diploma_Details_ID" Type="int" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Attendance_Day" Type="int" />
+    <Property Name="Attendance_Type" Type="int" />
+    <Property Name="Emp_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Distributors_Diploma_Deleted">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Diploma_Details_ID" Type="int" />
+    <Property Name="Registration_Date" Type="datetime" />
+    <Property Name="Deleting_Date" Type="datetime" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Distributors_Dopay_renewal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Dopay_Activation_Date_Actual" Type="datetime" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Dopay_Renewal_Date" Type="datetime" />
+    <Property Name="Renewal_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Distributors_Invited_Course">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Invitation_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Distributors_PrePaidCards">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Card_Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Distributors_Request_Transfer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Request_Date" Type="date" />
+    <Property Name="Is_Approved" Type="bit" />
+    <Property Name="Approved_Date" Type="date" />
+    <Property Name="Approved_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Distributors_Requests">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Requests_photo" Type="nvarchar" MaxLength="350" />
+    <Property Name="Requests_ID" Type="int" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="Upload_Date" Type="datetime" />
+    <Property Name="by_Admin" Type="int" />
+  </EntityType>
+  <EntityType Name="Distributors_Summit_Coins">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Is_Used" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Distributors_Summit_Coins_12-06-2020' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Distributors_Summit_Coins_12-06-2020">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Distributors_Summit_Coins_old' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Distributors_Summit_Coins_old">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Distributors_Temp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="Mobile" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="National_ID" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Level_Status" Type="nvarchar(max)" />
+    <Property Name="Upline_ID" Type="int" />
+    <Property Name="Upline_Join_Level" Type="nvarchar(max)" />
+    <Property Name="Upline_History_ID" Type="nvarchar(max)" />
+    <Property Name="Upline_History_Names" Type="nvarchar(max)" />
+    <Property Name="Upline_Branch_Join_Level" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="Reset_Token" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password_Updateable" Type="bit" />
+    <Property Name="Gov_ID" Type="int" />
+    <Property Name="City_ID" Type="int" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Referrer_ID" Type="nvarchar" MaxLength="16" />
+    <Property Name="Membership_Status_ID" Type="int" />
+    <Property Name="OrderNumber" Type="nvarchar(max)" />
+    <Property Name="Transaction_Done" Type="bit" />
+    <Property Name="Country_ID" Type="int" />
+    <Property Name="Sponsor_ID" Type="int" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="Street_Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="Building_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Floor_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Flat_No" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Distributors_Training">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Diploma_Details_ID" Type="int" />
+    <Property Name="Registration_Date" Type="date" />
+    <Property Name="Grade_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Distributors_Training_Attendance_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Diploma_Details_ID" Type="int" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Attendance_Day" Type="int" />
+    <Property Name="Attendance_Type" Type="int" />
+    <Property Name="Emp_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Dopay">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Dopay_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Dopay_Is_Active" Type="bit" />
+    <Property Name="Dopay_Activation_Date" Type="smalldatetime" />
+    <Property Name="Dopay_Type" Type="int" />
+  </EntityType>
+  <EntityType Name="Dopay_Activation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Request_Date" Type="datetime" />
+    <Property Name="Request_Cost" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="IS_Done" Type="bit" />
+  </EntityType>
+  <EntityType Name="dopay_close">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Dopay_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dopay_Activation_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DynamicPages">
+    <Key>
+      <PropertyRef Name="PageID" />
+    </Key>
+    <Property Name="PageID" Type="bigint" Nullable="false" />
+    <Property Name="PageBrowserTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="PageMainTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="PageMainTitleIcon" Type="nvarchar" MaxLength="100" />
+    <Property Name="PageMainPrgrph" Type="nvarchar(max)" />
+    <Property Name="PagePhotoMainPrgrph" Type="nvarchar" MaxLength="100" />
+    <Property Name="PagePhotoMainPrgrphLocID" Type="int" />
+    <Property Name="PagePhotoCaption" Type="nvarchar" MaxLength="300" />
+    <Property Name="PageDateAdd" Type="datetime" Nullable="false" />
+    <Property Name="PageLayoutCols" Type="int" />
+    <Property Name="FKLayoutID" Type="int" Nullable="false" />
+    <Property Name="FKMenuID" Type="int" Nullable="false" />
+    <Property Name="PageMainTitleAr" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="PageMainPrgrphAr" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PageBrowserTitleAr" Type="nvarchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Easy_pay_Acc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="National_ID_No" Type="nvarchar(max)" />
+    <Property Name="Card_ID_No" Type="nvarchar(max)" />
+    <Property Name="Acc_No" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Easy_pay_cards">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Name_AR" Type="nvarchar(max)" />
+    <Property Name="National_ID" Type="nvarchar" MaxLength="450" />
+    <Property Name="Card_ID" Type="nvarchar" MaxLength="450" />
+    <Property Name="National_ID_No" Type="nvarchar(max)" />
+    <Property Name="Card_ID_No" Type="nvarchar(max)" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Elite_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Details" Type="nvarchar" MaxLength="550" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Elite_Comments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Elite_Brands_Place_ID" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="350" />
+    <Property Name="Comment_Date" Type="datetime" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Is_Approved" Type="bit" />
+    <Property Name="Approved_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Elite_Place_Branchs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="350" />
+    <Property Name="Elite_Place_ID" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="350" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Gov_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Elite_Place_Images">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Place_ID" Type="int" />
+    <Property Name="Image_Path" Type="nvarchar" MaxLength="350" />
+  </EntityType>
+  <EntityType Name="Elite_Places">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Category_ID" Type="int" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="350" />
+    <Property Name="FaceBook" Type="nvarchar" MaxLength="350" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="350" />
+    <Property Name="Address" Type="nvarchar" MaxLength="350" />
+    <Property Name="Discount" Type="nvarchar" MaxLength="350" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Gov_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Event_Distributor_Relatives">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Relative_Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="Relative_Rank" Type="nvarchar" MaxLength="50" />
+    <Property Name="Request_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Event_Valid_Distributors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="EventCalendar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="EventDate" Type="datetime" />
+    <Property Name="EventHeader" Type="nvarchar" MaxLength="350" />
+    <Property Name="EventDescription" Type="nvarchar(max)" />
+    <Property Name="Admin_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="350" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Cost" Type="int" />
+    <Property Name="Available_Seats" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Events_Ticket_Holders">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Event_ID" Type="int" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Tickets_Count" Type="int" />
+    <Property Name="Total_Cost" Type="int" />
+    <Property Name="Request_Date" Type="datetime" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="Is_Delivered" Type="bit" />
+    <Property Name="Delivered_By" Type="int" />
+    <Property Name="Delivery_Date" Type="datetime" />
+    <Property Name="OrderNumber" Type="nvarchar(max)" />
+    <Property Name="Subscription_Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Fawry_Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Order_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Order_Point" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Paid_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Paid_point" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Creation_date" Type="datetime" />
+    <Property Name="Update_date" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fawry_Ref_No" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fawry_No" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Free_Courses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Free_Courses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="GalleryList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Added_Date" Type="datetime" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="GalleryPhotos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo_Path" Type="nvarchar" MaxLength="350" />
+    <Property Name="GalleryListID" Type="int" />
+    <Property Name="Photo_Text" Type="nvarchar" MaxLength="250" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Photo_Path_Small" Type="nvarchar" MaxLength="350" />
+  </EntityType>
+  <EntityType Name="Governorate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_AR" Type="nvarchar" MaxLength="255" />
+    <Property Name="Name_EN" Type="nvarchar" MaxLength="255" />
+    <Property Name="Delivery_Cost" Type="int" />
+  </EntityType>
+  <EntityType Name="HealthCare_News">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="PhotoPath" Type="nvarchar" MaxLength="350" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="Admin_ID" Type="int" Nullable="false" />
+    <Property Name="Approved" Type="bit" />
+    <Property Name="Approved_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Image_Slider">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image_Text" Type="nvarchar" MaxLength="250" />
+    <Property Name="Image_Text_Ar" Type="nvarchar" MaxLength="250" />
+    <Property Name="Image_Path" Type="nvarchar" MaxLength="350" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Invitation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Inv_name" Type="nvarchar" MaxLength="450" />
+    <Property Name="mobile" Type="nvarchar(max)" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="Referrer_ID" Type="nvarchar" MaxLength="16" />
+    <Property Name="update_date" Type="datetime" />
+    <Property Name="done" Type="bit" />
+  </EntityType>
+  <EntityType Name="Kinship_Degree">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Labels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Descr" Type="nvarchar(max)" />
+    <Property Name="TitleStyle" Type="nvarchar(max)" />
+    <Property Name="DescrStyle" Type="nvarchar(max)" />
+    <Property Name="TitleAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="DescrAr" Type="nvarchar(max)" />
+    <Property Name="TitleStyleAr" Type="nvarchar(max)" />
+    <Property Name="DescrStyleAr" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Layouts">
+    <Key>
+      <PropertyRef Name="LayoutID" />
+    </Key>
+    <Property Name="LayoutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LayoutName" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="LayoutDesc" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="Level_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="UpGrade_Date" Type="datetime" />
+    <Property Name="Old_Level" Type="nvarchar" MaxLength="350" />
+    <Property Name="New_Level" Type="nvarchar" MaxLength="350" />
+  </EntityType>
+  <EntityType Name="Level_Status_Ranks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Profit_Rate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Silver_Profit_Rate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Bronze_Profit_Rate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Leader_Ship_Points" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Bronze_LeaderShip_Points" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Commission" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LocationDesc" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Means_Of_Communication">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Communication" Type="nvarchar" MaxLength="100" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Membership_Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.MenuLocations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MenuLocations">
+    <Key>
+      <PropertyRef Name="FKMenuID" />
+      <PropertyRef Name="FKLocationID" />
+    </Key>
+    <Property Name="FKMenuID" Type="int" Nullable="false" />
+    <Property Name="FKLocationID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="int" Nullable="false" />
+    <Property Name="MenuTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="MenuTitleAr" Type="nvarchar" MaxLength="300" />
+    <Property Name="MenuDesc" Type="nvarchar(max)" />
+    <Property Name="MenuIcon" Type="nvarchar" MaxLength="200" />
+    <Property Name="MenuDisplay" Type="bit" Nullable="false" />
+    <Property Name="MenuOrder" Type="int" Nullable="false" />
+    <Property Name="MenuPage" Type="nvarchar" MaxLength="300" />
+    <Property Name="MenuParentID" Type="int" Nullable="false" />
+    <Property Name="MenuDateAdded" Type="datetime" Nullable="false" />
+    <Property Name="MenuIsAdmin" Type="bit" Nullable="false" />
+    <Property Name="Style" Type="nvarchar(max)" />
+    <Property Name="StyleAr" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Network_Distributor_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Online_Courses_Details_ID" Type="int" />
+    <Property Name="Last_Login" Type="datetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Network_Video">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Videos" Type="nvarchar" MaxLength="150" />
+    <Property Name="Url" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar" MaxLength="350" />
+    <Property Name="Instructor" Type="nvarchar" MaxLength="150" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Plan_B.dbo.New_Password' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="New_Password">
+          <Property Name="Password" Type="nvarchar" MaxLength="255" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="255" />
+          <Property Name="Change_Date" Type="datetime" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.News' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Title" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="350" Nullable="false" />
+    <Property Name="Body" Type="nvarchar(max)" />
+    <Property Name="Brief" Type="nvarchar(max)" />
+    <Property Name="Reads" Type="int" />
+    <Property Name="Publish_Date" Type="datetime" />
+    <Property Name="Writer_ID" Type="int" />
+    <Property Name="Photo_Path" Type="nvarchar" MaxLength="350" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="News_Slider">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="Title_Ar" Type="nvarchar" MaxLength="250" />
+    <Property Name="Image_Small_Path" Type="nvarchar" MaxLength="250" />
+    <Property Name="Image_Large_Path" Type="nvarchar" MaxLength="250" />
+    <Property Name="Image_alt" Type="nvarchar" MaxLength="250" />
+    <Property Name="News_Link" Type="nvarchar" MaxLength="350" />
+    <Property Name="Image_Small_Desc" Type="nvarchar" MaxLength="250" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.NewsLetter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="NewsLetter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Plan_B.dbo.Notes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Notes">
+          <Property Name="ID" Type="int" />
+          <Property Name="Note_Text" Type="nvarchar(max)" />
+          <Property Name="Note_Date" Type="datetime" />
+          <Property Name="Admin_ID" Type="int" />
+          <Property Name="Is_Active" Type="bit" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.NS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="NS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kind" Type="nvarchar" MaxLength="255" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NS_Activation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NS_ID" Type="int" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Activation_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NS_Payments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Transaction_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="NS_ID" Type="int" />
+    <Property Name="Paid_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="By_Admin_ID" Type="int" />
+    <Property Name="Payment_Method_ID" Type="int" />
+    <Property Name="Receipt_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payment_Date" Type="datetime" />
+    <Property Name="Is_Closed" Type="bit" />
+    <Property Name="Notes" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="NS_Starting_Balance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NS_ID" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="255" />
+    <Property Name="Daily_Starting_Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="NS_Transactions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NS_ID" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Today_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transfered_To_ID" Type="int" />
+    <Property Name="Transaction_ID" Type="nvarchar" MaxLength="20" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Due_Date" Type="datetime" />
+    <Property Name="Description" Type="nvarchar" MaxLength="350" />
+    <Property Name="NS_Is_Paid" Type="bit" />
+    <Property Name="NS_Paid_Date" Type="datetime" />
+    <Property Name="Accountant_Is_Paid" Type="bit" />
+    <Property Name="Accountant_Payment_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NS_Upgrade">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dist_ID" Type="int" />
+    <Property Name="NS_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Online_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Ar" Type="nvarchar(max)" />
+    <Property Name="Name_En" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Online_Courses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Ar" Type="nvarchar(max)" />
+    <Property Name="Name_En" Type="nvarchar(max)" />
+    <Property Name="Imge" Type="nvarchar(max)" />
+    <Property Name="Number_Of_Videos" Type="int" />
+    <Property Name="Online_Category_ID" Type="int" />
+    <Property Name="Online_course_Level_ID" Type="int" />
+    <Property Name="Online_Instructor_ID" Type="int" />
+    <Property Name="Total_hourse" Type="time" Precision="7" />
+    <Property Name="Original_Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Price_After_Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Distributor_Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="URL" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Online_Courses_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lesson_Ar" Type="nvarchar(max)" />
+    <Property Name="Lesson_En" Type="nvarchar(max)" />
+    <Property Name="Online_Courses_ID" Type="int" />
+    <Property Name="Is_free" Type="bit" />
+    <Property Name="Is_intro" Type="bit" />
+    <Property Name="Url" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Online_Courses_Level">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Ar" Type="nvarchar(max)" />
+    <Property Name="Name_En" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Online_Courses_Packages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Packages_ID" Type="int" />
+    <Property Name="Online_Courses_ID" Type="int" />
+    <Property Name="Is_Active" Type="int" />
+  </EntityType>
+  <EntityType Name="Online_Courses_URL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Online_Courses_ID" Type="int" />
+    <Property Name="URL" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Online_Distributor_Courses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Online_Courses_ID" Type="int" />
+    <Property Name="Select_Date" Type="datetime" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Online_Distributor_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Online_Courses_Details_ID" Type="int" />
+    <Property Name="Last_Login" Type="datetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Online_Distributor_Packages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Packages_ID" Type="int" />
+    <Property Name="Select_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Online_Distributor_Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Online_Courses_Details_ID" Type="int" />
+    <Property Name="Last_Login" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="350" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Online_Distributors_Point' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Online_Distributors_Point">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="NS_Transaction_ID" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Online_Instructor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Ar" Type="nvarchar(max)" />
+    <Property Name="Name_En" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Online_Packages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Packages_Name" Type="nvarchar(max)" />
+    <Property Name="Imge" Type="nvarchar(max)" />
+    <Property Name="Original_Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Price_After_Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Distributor_Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="No_of_Courses" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Online_Payment_Parameters">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Value" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Required" Type="bit" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Online_Upgrade_Packages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Upgrade_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Image_URL" Type="nvarchar(max)" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Old_Package" Type="int" />
+    <Property Name="New_Package" Type="int" />
+  </EntityType>
+  <EntityType Name="Packages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Packages_Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_ID" Type="int" />
+    <Property Name="Package_ID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.PagePrgrphs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PagePrgrphs">
+    <Key>
+      <PropertyRef Name="PagePrgrphID" />
+      <PropertyRef Name="PagePrgrphTitle" />
+      <PropertyRef Name="PagePrgrphTitleIcon" />
+      <PropertyRef Name="PagePrgrphDateAdd" />
+      <PropertyRef Name="PagePrgrphOrder" />
+      <PropertyRef Name="FKPageID" />
+    </Key>
+    <Property Name="PagePrgrphID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PagePrgrphTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="PagePrgrphTitleIcon" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PagePrgrphDesc" Type="nvarchar(max)" />
+    <Property Name="PagePrgrphPhoto" Type="nvarchar" MaxLength="100" />
+    <Property Name="PagePrgrphPhotoLocID" Type="int" />
+    <Property Name="PagePrgrphDateAdd" Type="datetime" Nullable="false" />
+    <Property Name="PagePrgrphOrder" Type="int" Nullable="false" />
+    <Property Name="FKPageID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Partners">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_En" Type="nvarchar" MaxLength="150" />
+    <Property Name="Name_Ar" Type="nvarchar" MaxLength="150" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="150" />
+    <Property Name="Website" Type="nvarchar" MaxLength="150" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Payment_Method' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Payment_Method">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Payment_Transactions_NS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NS_ID" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Today_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transfered_To_ID" Type="int" />
+    <Property Name="Transaction_ID" Type="nvarchar" MaxLength="20" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Due_Date" Type="datetime" />
+    <Property Name="Description" Type="nvarchar" MaxLength="350" />
+    <Property Name="NS_Is_Paid" Type="bit" />
+    <Property Name="NS_Paid_Date" Type="datetime" />
+    <Property Name="Accountant_Is_Paid" Type="bit" />
+    <Property Name="Accountant_Payment_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Place_Branches">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Place_ID" Type="int" />
+    <Property Name="Gov_ID" Type="int" />
+    <Property Name="City_ID" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone2" Type="nchar" MaxLength="10" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Is_Central_Place" Type="bit" />
+  </EntityType>
+  <EntityType Name="Place_Specialization">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Type_ID" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Place_Suggestions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Place_Name" Type="nvarchar(max)" />
+    <Property Name="Gov_ID" Type="int" />
+    <Property Name="City_ID" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Suggestion_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Place_Suggestions_Admin_Reply">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Admin_ID" Type="int" />
+    <Property Name="Suggestion_ID" Type="int" />
+    <Property Name="Reply_Text" Type="nvarchar(max)" />
+    <Property Name="Reply_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Place_Ticket">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Place_ID" Type="int" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Ticket_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ticket_Text" Type="nvarchar(max)" />
+    <Property Name="Is_Solved" Type="bit" />
+    <Property Name="Other_Phone" Type="nvarchar(max)" />
+    <Property Name="Health_Type_ID" Type="int" />
+    <Property Name="Ticket_Date" Type="datetime" />
+    <Property Name="Closing_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Place_Ticket_Branches">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ticket_ID" Type="int" />
+    <Property Name="Branch_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Place_Ticket_WorkFlow">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ticket_ID" Type="int" />
+    <Property Name="Reply_Text" Type="nvarchar(max)" />
+    <Property Name="Reply_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Places">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Type_ID" Type="int" />
+    <Property Name="Specialize_ID" Type="int" />
+    <Property Name="CP_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone_1" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone_2" Type="nvarchar" MaxLength="250" />
+    <Property Name="Discount_Percentage" Type="nvarchar(max)" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="End_Date" Type="datetime" />
+    <Property Name="Account_Manager_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Account_Manager_Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Plan_B_Balance_Sheet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transaction_Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.POC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="POC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Max_Members" Type="int" />
+  </EntityType>
+  <EntityType Name="POC_Distributor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="POC_ID" Type="int" />
+    <Property Name="Subscription_Date" Type="datetime" />
+    <Property Name="Subscription_Cost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Is_Confirmed" Type="bit" />
+    <Property Name="Conformation_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="POC_Temp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Request_Date" Type="datetime" />
+    <Property Name="Subscription_Cost" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Points">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="From_Distributor" Type="int" />
+    <Property Name="Point_Count" Type="int" />
+    <Property Name="Side" Type="nvarchar" MaxLength="10" />
+    <Property Name="Point_Type" Type="nvarchar" MaxLength="30" />
+    <Property Name="Point_Date" Type="datetime" />
+    <Property Name="Is_Calculated" Type="bit" />
+    <Property Name="Calculation_Date" Type="datetime" />
+    <Property Name="Point_Level" Type="int" />
+    <Property Name="Is_Offer" Type="bit" />
+    <Property Name="Is_Upgrade" Type="bit" />
+    <Property Name="Is_Flashed" Type="bit" />
+    <Property Name="Flash_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Print_Certificate_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Course_ID" Type="int" />
+    <Property Name="Certificate_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Print_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Print_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Admin_ID" Type="int" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Print_Type" Type="int" />
+    <Property Name="Print_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Print_Types">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Product_Brands' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Product_Brands">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="350" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="350" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Product_Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Product_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="350" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Product_Equations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_ID" Type="int" />
+    <Property Name="Cost_of_the_company" Type="int" />
+    <Property Name="Diploma" Type="int" />
+    <Property Name="B_V" Type="int" />
+    <Property Name="D_C" Type="int" />
+    <Property Name="A_L_A" Type="int" />
+    <Property Name="SMART_APP" Type="int" />
+    <Property Name="Shipping" Type="int" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="Product_Type_ID" Type="int" />
+    <Property Name="Product_Brand_ID" Type="int" />
+    <Property Name="Cost_Points" Type="int" />
+    <Property Name="Profit_Points" Type="int" />
+    <Property Name="Management_Points" Type="int" />
+    <Property Name="Shipping_Points" Type="int" />
+    <Property Name="Redeem_Points" Type="int" />
+    <Property Name="Image" Type="nvarchar" MaxLength="350" />
+    <Property Name="Details" Type="nvarchar(max)" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Travel_Discount" Type="int" />
+    <Property Name="Total_Cost" Type="int" />
+    <Property Name="Contract_Cost" Type="int" />
+    <Property Name="Is_Upgrade" Type="bit" />
+    <Property Name="Package_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Package" Type="bit" />
+    <Property Name="Package_ID" Type="int" />
+    <Property Name="Product_Hint" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sponsor_Points" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Summit_Coins" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Summit_Cost" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Products_Scratch_Cards' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Products_Scratch_Cards">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Serial" Type="nvarchar" MaxLength="50" />
+    <Property Name="Scratch_Serial" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Product_Cost_Type_ID" Type="int" />
+    <Property Name="Is_Used" Type="bit" />
+    <Property Name="User_For_Distributor_ID" Type="int" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="Sell_Date" Type="datetime" />
+    <Property Name="Sell_By" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Used_From_WebSite" Type="bit" />
+  </EntityType>
+  <EntityType Name="Profit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Profit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Percentage" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Profit_Date" Type="datetime" />
+    <Property Name="From_Distributor_ID" Type="int" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="Paid_By" Type="int" />
+    <Property Name="Is_Offer" Type="bit" />
+    <Property Name="Payment_Date" Type="datetime" />
+    <Property Name="Is_Upgrade" Type="bit" />
+    <Property Name="Point_Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Profit_Advanced_Network' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Profit_Advanced_Network">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Profit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Profit_Date" Type="datetime" />
+    <Property Name="From_Distributor_ID" Type="int" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="Paid_By" Type="int" />
+    <Property Name="Payment_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Profit_Distributing_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Status_ID" Type="int" />
+    <Property Name="Profit_Rate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Membership_ID" Type="int" />
+    <Property Name="From_Distributor_ID" Type="int" />
+    <Property Name="Is_Sponser" Type="bit" />
+    <Property Name="Activation_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Profit_ISave_Membership">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Profit_Diff" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Profit_Date" Type="datetime" />
+    <Property Name="From_Distributor_ID" Type="int" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="Paid_By" Type="int" />
+    <Property Name="Payment_Date" Type="datetime" />
+    <Property Name="Point_Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Profit_Payment_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Profit_Profit_Diff' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Profit_Profit_Diff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Profit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Profit_Date" Type="datetime" />
+    <Property Name="From_Distributor_ID" Type="int" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="Paid_By" Type="int" />
+    <Property Name="Payment_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Types" Type="nvarchar" MaxLength="450" />
+    <Property Name="IS_Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Sales_Receipt' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Sales_Receipt">
+    <Key>
+      <PropertyRef Name="Receipt_Serial" />
+    </Key>
+    <Property Name="Receipt_Serial" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributors_ID" Type="int" />
+    <Property Name="Product_ID" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Receipt_Date" Type="datetime" />
+    <Property Name="Payment_Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Shipping_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Delivery_Method" Type="int" />
+    <Property Name="Delivery_Cost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Request_Date" Type="datetime" />
+    <Property Name="Shipping_Date" Type="datetime" />
+    <Property Name="Delivery_Date" Type="datetime" />
+    <Property Name="Is_Shipped" Type="bit" />
+    <Property Name="Is_Main_Shipping" Type="bit" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="350" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Delivered" Type="bit" />
+  </EntityType>
+  <EntityType Name="Shipping_Distributor_Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" Nullable="false" />
+    <Property Name="Shipping_Product_ID" Type="int" />
+    <Property Name="Shipping_Details_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Shipping_Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Sponser_Offer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Sponser_ID" Type="int" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="Commission" Type="int" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="Paid_Date" Type="datetime" />
+    <Property Name="Paid_By" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Testimonial' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Testimonial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="Position" Type="nvarchar" MaxLength="150" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="Comment_Date" Type="datetime" />
+    <Property Name="Approved" Type="bit" />
+  </EntityType>
+  <EntityType Name="Training">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Service_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Training_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Diploma_ID" Type="int" />
+    <Property Name="Course_Location_ID" Type="int" />
+    <Property Name="Attendance_Date" Type="nvarchar(max)" />
+    <Property Name="Number_Of_Dates" Type="int" />
+    <Property Name="Instructor_ID" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Available_Seats" Type="int" />
+    <Property Name="Note" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Travel_Cities">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Gov_ID" Type="int" />
+    <Property Name="Country_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Travel_Offer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="550" />
+    <Property Name="City_ID" Type="int" />
+    <Property Name="Details" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Cost_Points" Type="int" />
+    <Property Name="AddValuePerson" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Travel_Offer_Images">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Offer_ID" Type="int" />
+    <Property Name="Image_Path" Type="nvarchar" MaxLength="250" />
+    <Property Name="Image_Title" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Travel_Reservation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Travel_Reservation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hotel_ID" Type="int" />
+    <Property Name="Start_Date" Type="datetime" />
+    <Property Name="End_Date" Type="datetime" />
+    <Property Name="Child_Count" Type="int" />
+    <Property Name="Adult_Count" Type="int" />
+    <Property Name="addition_Adult_Cont" Type="int" />
+    <Property Name="Reservation_Cost_Before" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Reservation_Cost_After" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Is_Confirmed" Type="bit" />
+    <Property Name="Confirmed_By" Type="int" />
+    <Property Name="Confirmation_Date" Type="datetime" />
+    <Property Name="Travel_Offer_ID" Type="int" />
+    <Property Name="Travel_Discount" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Upgrade_Membership_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Upgrade_Membership_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Old_Membership" Type="int" />
+    <Property Name="New_Membership" Type="int" />
+    <Property Name="Paid_Amount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Upgrade_Date" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Upgrade_Program_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Upgrade_Program_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Old_Program" Type="int" />
+    <Property Name="New_Program" Type="int" />
+    <Property Name="Upgrade_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Upgrade_Temp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Upgrade_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Upgrades">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distributor_ID" Type="int" />
+    <Property Name="New_Level_Status" Type="nvarchar" MaxLength="250" />
+    <Property Name="Old_Level_Status" Type="nvarchar" MaxLength="250" />
+    <Property Name="Upgrade_Date" Type="datetime" />
+    <Property Name="Commission_ID" Type="int" />
+    <Property Name="Is_Paid" Type="bit" />
+    <Property Name="Paid_By" Type="int" />
+    <Property Name="From_Distributor_ID" Type="int" />
+    <Property Name="Payment_Date" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Video_Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Video_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Added_Date" Type="datetime" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Videos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Videos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="URL" Type="nvarchar(max)" />
+    <Property Name="Code" Type="nvarchar" MaxLength="150" />
+    <Property Name="Admin_ID" Type="int" />
+    <Property Name="Date_Modified" Type="datetime" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Views_Count" Type="int" />
+    <Property Name="Gallery_ID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Visitors_Counter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Visitors_Counter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IP" Type="nvarchar" MaxLength="150" />
+    <Property Name="Visit_Date" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.Votes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Votes">
+    <Key>
+      <PropertyRef Name="Vote_ID" />
+    </Key>
+    <Property Name="Vote_ID" Type="int" Nullable="false" />
+    <Property Name="Vote_TitleAR" Type="nvarchar" MaxLength="150" />
+    <Property Name="Vote_Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Vote_BodyAR" Type="nvarchar" MaxLength="250" />
+    <Property Name="Vote_Body" Type="nvarchar" MaxLength="250" />
+    <Property Name="Vote_Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Plan_B.dbo.VotesAnswers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VotesAnswers">
+    <Key>
+      <PropertyRef Name="VoteAnswer_ID" />
+    </Key>
+    <Property Name="VoteAnswer_ID" Type="int" Nullable="false" />
+    <Property Name="VoteAnswer_BodyAR" Type="nvarchar" MaxLength="250" />
+    <Property Name="VoteAnswer_Body" Type="nvarchar" MaxLength="250" />
+    <Property Name="VoteAnswer_Hits" Type="int" />
+    <Property Name="VoteAnswer_Vote_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="work_zone_area">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CITY_AR" Type="nvarchar" MaxLength="255" />
+    <Property Name="CITY_EN" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="Plan_BModelStoreContainer">
+    <EntitySet Name="__Products" EntityType="Self.__Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Banks" EntityType="Self.Acc_Banks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Compny_Balance" EntityType="Self.Acc_Compny_Balance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Items" EntityType="Self.Acc_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Items_Main" EntityType="Self.Acc_Items_Main" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Items_Sub" EntityType="Self.Acc_Items_Sub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Main_Expense" EntityType="Self.Acc_Main_Expense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Main_Income" EntityType="Self.Acc_Main_Income" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Money_Type" EntityType="Self.Acc_Money_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Sub_Expense" EntityType="Self.Acc_Sub_Expense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Sub_Income" EntityType="Self.Acc_Sub_Income" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Treasury" EntityType="Self.Acc_Treasury" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Treasury_Bank_Transactions" EntityType="Self.Acc_Treasury_Bank_Transactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_User_Transaction_Type" EntityType="Self.Acc_User_Transaction_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_Users" EntityType="Self.Acc_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Activated_Distributors" EntityType="Self.Activated_Distributors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin_History" EntityType="Self.Admin_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin_Menus" EntityType="Self.Admin_Menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin_User_Menus" EntityType="Self.Admin_User_Menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin_User_Pages" EntityType="Self.Admin_User_Pages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Administrator_Type" EntityType="Self.Administrator_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Administrators" EntityType="Self.Administrators" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Available_Job" EntityType="Self.Available_Job" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Balance_Coupons" EntityType="Self.Balance_Coupons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Best_Profit" EntityType="Self.Best_Profit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Candidate" EntityType="Self.Candidate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cashing_Balance_Request" EntityType="Self.Cashing_Balance_Request" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Challenges" EntityType="Self.Challenges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Commissions" EntityType="Self.Commissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_Service" EntityType="Self.Customer_Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_Service_Report" EntityType="Self.Customer_Service_Report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Daily_Follow" EntityType="Self.Daily_Follow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Daily_Follow_Invetation_Type" EntityType="Self.Daily_Follow_Invetation_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diploma_11" EntityType="Self.Diploma_11" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diploma_Attendance_Type" EntityType="Self.Diploma_Attendance_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diploma_Cards" EntityType="Self.Diploma_Cards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diploma_Details" EntityType="Self.Diploma_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diploma_Grades" EntityType="Self.Diploma_Grades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diploma_Instructors" EntityType="Self.Diploma_Instructors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diploma_Location" EntityType="Self.Diploma_Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diplomas" EntityType="Self.Diplomas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dist_Ranks" EntityType="Self.Dist_Ranks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dist_Rankss" EntityType="Self.Dist_Rankss" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dist_Ref" EntityType="Self.Dist_Ref" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Authorization_Doc" EntityType="Self.Distributor_Authorization_Doc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Browser_Cookie" EntityType="Self.Distributor_Browser_Cookie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Diploma_Referrer_Gold" EntityType="Self.Distributor_Diploma_Referrer_Gold" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Login_courses" EntityType="Self.Distributor_Login_courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Login_History" EntityType="Self.Distributor_Login_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_National_ID" EntityType="Self.Distributor_National_ID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Password" EntityType="Self.Distributor_Password" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Pending_Activation" EntityType="Self.Distributor_Pending_Activation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Products" EntityType="Self.Distributor_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Relatives" EntityType="Self.Distributor_Relatives" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Serial_Paswword" EntityType="Self.Distributor_Serial_Paswword" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor_Token" EntityType="Self.Distributor_Token" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors" EntityType="Self.Distributors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Account_Balance" EntityType="Self.Distributors_Account_Balance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Account_Balance_Sing_Up" EntityType="Self.Distributors_Account_Balance_Sing_Up" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Addon_Coins" EntityType="Self.Distributors_Addon_Coins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Annual_renewal" EntityType="Self.Distributors_Annual_renewal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Coins_Cash" EntityType="Self.Distributors_Coins_Cash" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Deleted" EntityType="Self.Distributors_Deleted" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Diploma" EntityType="Self.Distributors_Diploma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Diploma_Attendance_History" EntityType="Self.Distributors_Diploma_Attendance_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Diploma_Deleted" EntityType="Self.Distributors_Diploma_Deleted" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Dopay_renewal" EntityType="Self.Distributors_Dopay_renewal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Invited_Course" EntityType="Self.Distributors_Invited_Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_PrePaidCards" EntityType="Self.Distributors_PrePaidCards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Request_Transfer" EntityType="Self.Distributors_Request_Transfer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Requests" EntityType="Self.Distributors_Requests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Summit_Coins" EntityType="Self.Distributors_Summit_Coins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Temp" EntityType="Self.Distributors_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Training" EntityType="Self.Distributors_Training" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Training_Attendance_History" EntityType="Self.Distributors_Training_Attendance_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dopay" EntityType="Self.Dopay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dopay_Activation" EntityType="Self.Dopay_Activation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dopay_close" EntityType="Self.dopay_close" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DynamicPages" EntityType="Self.DynamicPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Easy_pay_Acc" EntityType="Self.Easy_pay_Acc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Easy_pay_cards" EntityType="Self.Easy_pay_cards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Elite_Category" EntityType="Self.Elite_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Elite_Comments" EntityType="Self.Elite_Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Elite_Place_Branchs" EntityType="Self.Elite_Place_Branchs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Elite_Place_Images" EntityType="Self.Elite_Place_Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Elite_Places" EntityType="Self.Elite_Places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event_Distributor_Relatives" EntityType="Self.Event_Distributor_Relatives" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event_Valid_Distributors" EntityType="Self.Event_Valid_Distributors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventCalendar" EntityType="Self.EventCalendar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Events_Ticket_Holders" EntityType="Self.Events_Ticket_Holders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fawry_Payment" EntityType="Self.Fawry_Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GalleryList" EntityType="Self.GalleryList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GalleryPhotos" EntityType="Self.GalleryPhotos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Governorate" EntityType="Self.Governorate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HealthCare_News" EntityType="Self.HealthCare_News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image_Slider" EntityType="Self.Image_Slider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invitation" EntityType="Self.Invitation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kinship_Degree" EntityType="Self.Kinship_Degree" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Labels" EntityType="Self.Labels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Layouts" EntityType="Self.Layouts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Level_History" EntityType="Self.Level_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Level_Status_Ranks" EntityType="Self.Level_Status_Ranks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Means_Of_Communication" EntityType="Self.Means_Of_Communication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Membership_Status" EntityType="Self.Membership_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Network_Distributor_History" EntityType="Self.Network_Distributor_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Network_Video" EntityType="Self.Network_Video" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News_Slider" EntityType="Self.News_Slider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NS_Activation" EntityType="Self.NS_Activation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NS_Payments" EntityType="Self.NS_Payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NS_Starting_Balance" EntityType="Self.NS_Starting_Balance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NS_Transactions" EntityType="Self.NS_Transactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NS_Upgrade" EntityType="Self.NS_Upgrade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Category" EntityType="Self.Online_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Courses" EntityType="Self.Online_Courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Courses_Details" EntityType="Self.Online_Courses_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Courses_Level" EntityType="Self.Online_Courses_Level" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Courses_Packages" EntityType="Self.Online_Courses_Packages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Courses_URL" EntityType="Self.Online_Courses_URL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Distributor_Courses" EntityType="Self.Online_Distributor_Courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Distributor_History" EntityType="Self.Online_Distributor_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Distributor_Packages" EntityType="Self.Online_Distributor_Packages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Distributor_Status" EntityType="Self.Online_Distributor_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Instructor" EntityType="Self.Online_Instructor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Packages" EntityType="Self.Online_Packages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Payment_Parameters" EntityType="Self.Online_Payment_Parameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Online_Upgrade_Packages" EntityType="Self.Online_Upgrade_Packages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Packages" EntityType="Self.Packages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Packages_Products" EntityType="Self.Packages_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment_Transactions_NS" EntityType="Self.Payment_Transactions_NS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place_Branches" EntityType="Self.Place_Branches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place_Specialization" EntityType="Self.Place_Specialization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place_Suggestions" EntityType="Self.Place_Suggestions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place_Suggestions_Admin_Reply" EntityType="Self.Place_Suggestions_Admin_Reply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place_Ticket" EntityType="Self.Place_Ticket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place_Ticket_Branches" EntityType="Self.Place_Ticket_Branches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place_Ticket_WorkFlow" EntityType="Self.Place_Ticket_WorkFlow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plan_B_Balance_Sheet" EntityType="Self.Plan_B_Balance_Sheet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POC_Distributor" EntityType="Self.POC_Distributor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POC_Temp" EntityType="Self.POC_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Points" EntityType="Self.Points" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Print_Certificate_History" EntityType="Self.Print_Certificate_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Print_History" EntityType="Self.Print_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Print_Types" EntityType="Self.Print_Types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Equations" EntityType="Self.Product_Equations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profit" EntityType="Self.Profit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profit_Distributing_History" EntityType="Self.Profit_Distributing_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profit_ISave_Membership" EntityType="Self.Profit_ISave_Membership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profit_Payment_Type" EntityType="Self.Profit_Payment_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Requests" EntityType="Self.Requests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shipping_Details" EntityType="Self.Shipping_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shipping_Distributor_Products" EntityType="Self.Shipping_Distributor_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shipping_Products" EntityType="Self.Shipping_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sponser_Offer" EntityType="Self.Sponser_Offer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Training" EntityType="Self.Training" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Training_Details" EntityType="Self.Training_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Travel_Cities" EntityType="Self.Travel_Cities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Travel_Offer" EntityType="Self.Travel_Offer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Travel_Offer_Images" EntityType="Self.Travel_Offer_Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Upgrade_Temp" EntityType="Self.Upgrade_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Upgrades" EntityType="Self.Upgrades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="work_zone_area" EntityType="Self.work_zone_area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributors_Addon_Coins_12-06-2020" EntityType="Self.Distributors_Addon_Coins_12-06-2020" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Distributors_Addon_Coins_12-06-2020].[ID] AS [ID], 
+    [Distributors_Addon_Coins_12-06-2020].[Distributors_ID] AS [Distributors_ID], 
+    [Distributors_Addon_Coins_12-06-2020].[Debit] AS [Debit], 
+    [Distributors_Addon_Coins_12-06-2020].[Credit] AS [Credit], 
+    [Distributors_Addon_Coins_12-06-2020].[Transaction_Date] AS [Transaction_Date], 
+    [Distributors_Addon_Coins_12-06-2020].[Balance] AS [Balance], 
+    [Distributors_Addon_Coins_12-06-2020].[Description] AS [Description]
+    FROM [dbo].[Distributors_Addon_Coins_12-06-2020] AS [Distributors_Addon_Coins_12-06-2020]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Distributors_Summit_Coins_12-06-2020" EntityType="Self.Distributors_Summit_Coins_12-06-2020" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Distributors_Summit_Coins_12-06-2020].[ID] AS [ID], 
+    [Distributors_Summit_Coins_12-06-2020].[Distributors_ID] AS [Distributors_ID], 
+    [Distributors_Summit_Coins_12-06-2020].[Debit] AS [Debit], 
+    [Distributors_Summit_Coins_12-06-2020].[Credit] AS [Credit], 
+    [Distributors_Summit_Coins_12-06-2020].[Transaction_Date] AS [Transaction_Date], 
+    [Distributors_Summit_Coins_12-06-2020].[Balance] AS [Balance], 
+    [Distributors_Summit_Coins_12-06-2020].[Description] AS [Description]
+    FROM [dbo].[Distributors_Summit_Coins_12-06-2020] AS [Distributors_Summit_Coins_12-06-2020]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Distributors_Summit_Coins_old" EntityType="Self.Distributors_Summit_Coins_old" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Distributors_Summit_Coins_old].[ID] AS [ID], 
+    [Distributors_Summit_Coins_old].[Distributors_ID] AS [Distributors_ID], 
+    [Distributors_Summit_Coins_old].[Debit] AS [Debit], 
+    [Distributors_Summit_Coins_old].[Credit] AS [Credit], 
+    [Distributors_Summit_Coins_old].[Transaction_Date] AS [Transaction_Date], 
+    [Distributors_Summit_Coins_old].[Balance] AS [Balance], 
+    [Distributors_Summit_Coins_old].[Description] AS [Description]
+    FROM [dbo].[Distributors_Summit_Coins_old] AS [Distributors_Summit_Coins_old]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Free_Courses" EntityType="Self.Free_Courses" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Free_Courses].[ID] AS [ID], 
+    [Free_Courses].[Name] AS [Name]
+    FROM [dbo].[Free_Courses] AS [Free_Courses]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MenuLocations" EntityType="Self.MenuLocations" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MenuLocations].[FKMenuID] AS [FKMenuID], 
+    [MenuLocations].[FKLocationID] AS [FKLocationID]
+    FROM [dbo].[MenuLocations] AS [MenuLocations]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="News" EntityType="Self.News" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [News].[ID] AS [ID], 
+    [News].[Title] AS [Title], 
+    [News].[Body] AS [Body], 
+    [News].[Brief] AS [Brief], 
+    [News].[Reads] AS [Reads], 
+    [News].[Publish_Date] AS [Publish_Date], 
+    [News].[Writer_ID] AS [Writer_ID], 
+    [News].[Photo_Path] AS [Photo_Path], 
+    [News].[Active] AS [Active]
+    FROM [dbo].[News] AS [News]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="NewsLetter" EntityType="Self.NewsLetter" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [NewsLetter].[ID] AS [ID], 
+    [NewsLetter].[Email] AS [Email], 
+    [NewsLetter].[IsActive] AS [IsActive]
+    FROM [dbo].[NewsLetter] AS [NewsLetter]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="NS" EntityType="Self.NS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [NS].[ID] AS [ID], 
+    [NS].[Kind] AS [Kind], 
+    [NS].[Title] AS [Title]
+    FROM [dbo].[NS] AS [NS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Online_Distributors_Point" EntityType="Self.Online_Distributors_Point" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Online_Distributors_Point].[ID] AS [ID], 
+    [Online_Distributors_Point].[Distributors_ID] AS [Distributors_ID], 
+    [Online_Distributors_Point].[Debit] AS [Debit], 
+    [Online_Distributors_Point].[Credit] AS [Credit], 
+    [Online_Distributors_Point].[Transaction_Date] AS [Transaction_Date], 
+    [Online_Distributors_Point].[Balance] AS [Balance], 
+    [Online_Distributors_Point].[Description] AS [Description], 
+    [Online_Distributors_Point].[NS_Transaction_ID] AS [NS_Transaction_ID]
+    FROM [dbo].[Online_Distributors_Point] AS [Online_Distributors_Point]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PagePrgrphs" EntityType="Self.PagePrgrphs" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PagePrgrphs].[PagePrgrphID] AS [PagePrgrphID], 
+    [PagePrgrphs].[PagePrgrphTitle] AS [PagePrgrphTitle], 
+    [PagePrgrphs].[PagePrgrphTitleIcon] AS [PagePrgrphTitleIcon], 
+    [PagePrgrphs].[PagePrgrphDesc] AS [PagePrgrphDesc], 
+    [PagePrgrphs].[PagePrgrphPhoto] AS [PagePrgrphPhoto], 
+    [PagePrgrphs].[PagePrgrphPhotoLocID] AS [PagePrgrphPhotoLocID], 
+    [PagePrgrphs].[PagePrgrphDateAdd] AS [PagePrgrphDateAdd], 
+    [PagePrgrphs].[PagePrgrphOrder] AS [PagePrgrphOrder], 
+    [PagePrgrphs].[FKPageID] AS [FKPageID]
+    FROM [dbo].[PagePrgrphs] AS [PagePrgrphs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Payment_Method" EntityType="Self.Payment_Method" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Payment_Method].[ID] AS [ID], 
+    [Payment_Method].[Title] AS [Title], 
+    [Payment_Method].[Is_Active] AS [Is_Active]
+    FROM [dbo].[Payment_Method] AS [Payment_Method]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="POC" EntityType="Self.POC" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [POC].[ID] AS [ID], 
+    [POC].[Title] AS [Title], 
+    [POC].[Is_Active] AS [Is_Active], 
+    [POC].[Max_Members] AS [Max_Members]
+    FROM [dbo].[POC] AS [POC]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Product_Brands" EntityType="Self.Product_Brands" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Product_Brands].[ID] AS [ID], 
+    [Product_Brands].[Title] AS [Title], 
+    [Product_Brands].[Logo] AS [Logo], 
+    [Product_Brands].[Is_Active] AS [Is_Active]
+    FROM [dbo].[Product_Brands] AS [Product_Brands]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Product_Category" EntityType="Self.Product_Category" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Product_Category].[ID] AS [ID], 
+    [Product_Category].[Title] AS [Title], 
+    [Product_Category].[Description] AS [Description], 
+    [Product_Category].[Is_Active] AS [Is_Active]
+    FROM [dbo].[Product_Category] AS [Product_Category]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Products_Scratch_Cards" EntityType="Self.Products_Scratch_Cards" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Products_Scratch_Cards].[ID] AS [ID], 
+    [Products_Scratch_Cards].[Serial] AS [Serial], 
+    [Products_Scratch_Cards].[Scratch_Serial] AS [Scratch_Serial], 
+    [Products_Scratch_Cards].[Distributor_ID] AS [Distributor_ID], 
+    [Products_Scratch_Cards].[Product_Cost_Type_ID] AS [Product_Cost_Type_ID], 
+    [Products_Scratch_Cards].[Is_Used] AS [Is_Used], 
+    [Products_Scratch_Cards].[User_For_Distributor_ID] AS [User_For_Distributor_ID], 
+    [Products_Scratch_Cards].[Activation_Date] AS [Activation_Date], 
+    [Products_Scratch_Cards].[Sell_Date] AS [Sell_Date], 
+    [Products_Scratch_Cards].[Sell_By] AS [Sell_By], 
+    [Products_Scratch_Cards].[Is_Active] AS [Is_Active], 
+    [Products_Scratch_Cards].[Used_From_WebSite] AS [Used_From_WebSite]
+    FROM [dbo].[Products_Scratch_Cards] AS [Products_Scratch_Cards]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Profit_Advanced_Network" EntityType="Self.Profit_Advanced_Network" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Profit_Advanced_Network].[ID] AS [ID], 
+    [Profit_Advanced_Network].[Distributor_ID] AS [Distributor_ID], 
+    [Profit_Advanced_Network].[Profit] AS [Profit], 
+    [Profit_Advanced_Network].[Profit_Date] AS [Profit_Date], 
+    [Profit_Advanced_Network].[From_Distributor_ID] AS [From_Distributor_ID], 
+    [Profit_Advanced_Network].[Is_Paid] AS [Is_Paid], 
+    [Profit_Advanced_Network].[Paid_By] AS [Paid_By], 
+    [Profit_Advanced_Network].[Payment_Date] AS [Payment_Date]
+    FROM [dbo].[Profit_Advanced_Network] AS [Profit_Advanced_Network]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Profit_Profit_Diff" EntityType="Self.Profit_Profit_Diff" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Profit_Profit_Diff].[ID] AS [ID], 
+    [Profit_Profit_Diff].[Distributor_ID] AS [Distributor_ID], 
+    [Profit_Profit_Diff].[Profit] AS [Profit], 
+    [Profit_Profit_Diff].[Profit_Date] AS [Profit_Date], 
+    [Profit_Profit_Diff].[From_Distributor_ID] AS [From_Distributor_ID], 
+    [Profit_Profit_Diff].[Is_Paid] AS [Is_Paid], 
+    [Profit_Profit_Diff].[Paid_By] AS [Paid_By], 
+    [Profit_Profit_Diff].[Payment_Date] AS [Payment_Date]
+    FROM [dbo].[Profit_Profit_Diff] AS [Profit_Profit_Diff]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Sales_Receipt" EntityType="Self.Sales_Receipt" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Sales_Receipt].[Receipt_Serial] AS [Receipt_Serial], 
+    [Sales_Receipt].[Distributors_ID] AS [Distributors_ID], 
+    [Sales_Receipt].[Product_ID] AS [Product_ID], 
+    [Sales_Receipt].[Amount] AS [Amount], 
+    [Sales_Receipt].[Receipt_Date] AS [Receipt_Date], 
+    [Sales_Receipt].[Payment_Type] AS [Payment_Type]
+    FROM [dbo].[Sales_Receipt] AS [Sales_Receipt]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Testimonial" EntityType="Self.Testimonial" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Testimonial].[ID] AS [ID], 
+    [Testimonial].[Name] AS [Name], 
+    [Testimonial].[Email] AS [Email], 
+    [Testimonial].[Position] AS [Position], 
+    [Testimonial].[Comment] AS [Comment], 
+    [Testimonial].[Comment_Date] AS [Comment_Date], 
+    [Testimonial].[Approved] AS [Approved]
+    FROM [dbo].[Testimonial] AS [Testimonial]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Travel_Reservation" EntityType="Self.Travel_Reservation" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Travel_Reservation].[ID] AS [ID], 
+    [Travel_Reservation].[Hotel_ID] AS [Hotel_ID], 
+    [Travel_Reservation].[Start_Date] AS [Start_Date], 
+    [Travel_Reservation].[End_Date] AS [End_Date], 
+    [Travel_Reservation].[Child_Count] AS [Child_Count], 
+    [Travel_Reservation].[Adult_Count] AS [Adult_Count], 
+    [Travel_Reservation].[addition_Adult_Cont] AS [addition_Adult_Cont], 
+    [Travel_Reservation].[Reservation_Cost_Before] AS [Reservation_Cost_Before], 
+    [Travel_Reservation].[Reservation_Cost_After] AS [Reservation_Cost_After], 
+    [Travel_Reservation].[Distributor_ID] AS [Distributor_ID], 
+    [Travel_Reservation].[Is_Confirmed] AS [Is_Confirmed], 
+    [Travel_Reservation].[Confirmed_By] AS [Confirmed_By], 
+    [Travel_Reservation].[Confirmation_Date] AS [Confirmation_Date], 
+    [Travel_Reservation].[Travel_Offer_ID] AS [Travel_Offer_ID], 
+    [Travel_Reservation].[Travel_Discount] AS [Travel_Discount]
+    FROM [dbo].[Travel_Reservation] AS [Travel_Reservation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Upgrade_Membership_History" EntityType="Self.Upgrade_Membership_History" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Upgrade_Membership_History].[ID] AS [ID], 
+    [Upgrade_Membership_History].[Distributor_ID] AS [Distributor_ID], 
+    [Upgrade_Membership_History].[Old_Membership] AS [Old_Membership], 
+    [Upgrade_Membership_History].[New_Membership] AS [New_Membership], 
+    [Upgrade_Membership_History].[Paid_Amount] AS [Paid_Amount], 
+    [Upgrade_Membership_History].[Upgrade_Date] AS [Upgrade_Date]
+    FROM [dbo].[Upgrade_Membership_History] AS [Upgrade_Membership_History]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Upgrade_Program_History" EntityType="Self.Upgrade_Program_History" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Upgrade_Program_History].[ID] AS [ID], 
+    [Upgrade_Program_History].[Distributor_ID] AS [Distributor_ID], 
+    [Upgrade_Program_History].[Old_Program] AS [Old_Program], 
+    [Upgrade_Program_History].[New_Program] AS [New_Program], 
+    [Upgrade_Program_History].[Upgrade_Date] AS [Upgrade_Date]
+    FROM [dbo].[Upgrade_Program_History] AS [Upgrade_Program_History]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Video_Category" EntityType="Self.Video_Category" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Video_Category].[ID] AS [ID], 
+    [Video_Category].[Title] AS [Title], 
+    [Video_Category].[Active] AS [Active], 
+    [Video_Category].[Added_Date] AS [Added_Date], 
+    [Video_Category].[Comment] AS [Comment]
+    FROM [dbo].[Video_Category] AS [Video_Category]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Videos" EntityType="Self.Videos" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Videos].[ID] AS [ID], 
+    [Videos].[Title] AS [Title], 
+    [Videos].[URL] AS [URL], 
+    [Videos].[Code] AS [Code], 
+    [Videos].[Admin_ID] AS [Admin_ID], 
+    [Videos].[Date_Modified] AS [Date_Modified], 
+    [Videos].[Is_Active] AS [Is_Active], 
+    [Videos].[Views_Count] AS [Views_Count], 
+    [Videos].[Gallery_ID] AS [Gallery_ID]
+    FROM [dbo].[Videos] AS [Videos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Visitors_Counter" EntityType="Self.Visitors_Counter" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Visitors_Counter].[ID] AS [ID], 
+    [Visitors_Counter].[IP] AS [IP], 
+    [Visitors_Counter].[Visit_Date] AS [Visit_Date]
+    FROM [dbo].[Visitors_Counter] AS [Visitors_Counter]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Votes" EntityType="Self.Votes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Votes].[Vote_ID] AS [Vote_ID], 
+    [Votes].[Vote_TitleAR] AS [Vote_TitleAR], 
+    [Votes].[Vote_Title] AS [Vote_Title], 
+    [Votes].[Vote_BodyAR] AS [Vote_BodyAR], 
+    [Votes].[Vote_Body] AS [Vote_Body], 
+    [Votes].[Vote_Active] AS [Vote_Active]
+    FROM [dbo].[Votes] AS [Votes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VotesAnswers" EntityType="Self.VotesAnswers" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VotesAnswers].[VoteAnswer_ID] AS [VoteAnswer_ID], 
+    [VotesAnswers].[VoteAnswer_BodyAR] AS [VoteAnswer_BodyAR], 
+    [VotesAnswers].[VoteAnswer_Body] AS [VoteAnswer_Body], 
+    [VotesAnswers].[VoteAnswer_Hits] AS [VoteAnswer_Hits], 
+    [VotesAnswers].[VoteAnswer_Vote_ID] AS [VoteAnswer_Vote_ID]
+    FROM [dbo].[VotesAnswers] AS [VotesAnswers]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

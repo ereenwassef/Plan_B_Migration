@@ -1,0 +1,12 @@
+E:\Plan B\migration\OldDatabaseModel\bin\Debug\OldDatabaseModel.dll.config
+E:\Plan B\migration\OldDatabaseModel\bin\Debug\OldDatabaseModel.dll
+E:\Plan B\migration\OldDatabaseModel\bin\Debug\OldDatabaseModel.pdb
+E:\Plan B\migration\OldDatabaseModel\bin\Debug\EntityFramework.dll
+E:\Plan B\migration\OldDatabaseModel\bin\Debug\EntityFramework.xml
+E:\Plan B\migration\OldDatabaseModel\obj\Debug\OldDatabaseModel.csprojAssemblyReference.cache
+E:\Plan B\migration\OldDatabaseModel\obj\Debug\OldDatabaseModel.csproj.CoreCompileInputs.cache
+E:\Plan B\migration\OldDatabaseModel\obj\Debug\OldDatabaseModel.csproj.CopyComplete
+E:\Plan B\migration\OldDatabaseModel\obj\Debug\OldDatabaseModel.dll
+E:\Plan B\migration\OldDatabaseModel\obj\Debug\OldDatabaseModel.pdb
+E:\Plan B\migration\OldDatabaseModel\bin\Debug\EntityFramework.SqlServer.dll
+E:\Plan B\migration\OldDatabaseModel\bin\Debug\EntityFramework.SqlServer.xml

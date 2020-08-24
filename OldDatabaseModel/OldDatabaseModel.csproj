@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2516CBC-A1B2-4CFD-89CB-9DFF8B3A743A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OldDatabaseModel</RootNamespace>
+    <AssemblyName>OldDatabaseModel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Models\Acc_Banks.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Compny_Balance.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Items.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Items_Main.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Items_Sub.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Main_Expense.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Main_Income.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Money_Type.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Sub_Expense.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Sub_Income.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Treasury.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Treasury_Bank_Transactions.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_Users.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc_User_Transaction_Type.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Activated_Distributors.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Administrator.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Administrator_Type.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin_Menus.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin_User_Menus.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin_User_Pages.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Available_Job.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Balance_Coupons.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Best_Profit.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Candidate.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cashing_Balance_Request.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Challenge.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Commission.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer_Service.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer_Service_Report.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__Products.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Daily_Follow.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Daily_Follow_Invetation_Type.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Diploma.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Diploma_11.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Diploma_Attendance_Type.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Diploma_Cards.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Diploma_Details.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Diploma_Grades.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Diploma_Instructors.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Diploma_Location.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Account_Balance.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Account_Balance_Sing_Up.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Addon_Coins.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Addon_Coins_12_06_2020.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Annual_renewal.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Coins_Cash.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Deleted.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Diploma.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Diploma_Attendance_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Diploma_Deleted.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Dopay_renewal.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Invited_Course.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_PrePaidCards.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Requests.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Request_Transfer.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Summit_Coins.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Summit_Coins_12_06_2020.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Summit_Coins_old.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Temp.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Training.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributors_Training_Attendance_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Authorization_Doc.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Browser_Cookie.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Diploma_Referrer_Gold.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Login_courses.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Login_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_National_ID.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Password.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Pending_Activation.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Products.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Relatives.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Serial_Paswword.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distributor_Token.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dist_Ranks.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dist_Rankss.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dist_Ref.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dopay.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dopay_Activation.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dopay_close.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DynamicPage.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Easy_pay_Acc.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Easy_pay_cards.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Elite_Category.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Elite_Comments.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Elite_Places.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Elite_Place_Branchs.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Elite_Place_Images.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Event.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventCalendar.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Events_Ticket_Holders.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Event_Distributor_Relatives.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Event_Valid_Distributors.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Fawry_Payment.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Free_Courses.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GalleryList.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GalleryPhoto.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Governorate.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HealthCare_News.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Image_Slider.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invitation.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kinship_Degree.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Label.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Layout.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Level_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Level_Status_Ranks.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Location.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Means_Of_Communication.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Membership_Status.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Menu.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuLocation.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\N.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Network_Distributor_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Network_Video.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\News.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsLetter.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\News_Slider.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NS_Activation.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NS_Payments.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NS_Starting_Balance.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NS_Transactions.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NS_Upgrade.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OldDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OldDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OldDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Category.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Courses.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Courses_Details.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Courses_Level.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Courses_Packages.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Courses_URL.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Distributors_Point.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Distributor_Courses.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Distributor_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Distributor_Packages.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Distributor_Status.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Instructor.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Packages.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Payment_Parameters.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Upgrade_Packages.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Package.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Packages_Products.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PagePrgrph.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Partner.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payment_Method.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payment_Transactions_NS.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Place.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Place_Branches.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Place_Specialization.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Place_Suggestions.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Place_Suggestions_Admin_Reply.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Place_Ticket.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Place_Ticket_Branches.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Place_Ticket_WorkFlow.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Plan_B_Balance_Sheet.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\POC.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\POC_Distributor.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\POC_Temp.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Point.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Print_Certificate_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Print_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Print_Types.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Products_Scratch_Cards.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_Brands.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_Category.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_Equations.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profit.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profit_Advanced_Network.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profit_Distributing_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profit_ISave_Membership.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profit_Payment_Type.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profit_Profit_Diff.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Request.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sales_Receipt.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shipping_Details.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shipping_Distributor_Products.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shipping_Products.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sponser_Offer.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Testimonial.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Training.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Training_Details.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Travel_Cities.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Travel_Offer.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Travel_Offer_Images.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Travel_Reservation.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Upgrade.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Upgrade_Membership_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Upgrade_Program_History.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Upgrade_Temp.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Video.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Video_Category.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Visitors_Counter.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vote.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VotesAnswer.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\work_zone_area.cs">
+      <DependentUpon>OldDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\OldDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OldDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Models\OldDB.edmx.diagram">
+      <DependentUpon>OldDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\OldDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OldDB.Context.cs</LastGenOutput>
+      <DependentUpon>OldDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\OldDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OldDB.edmx</DependentUpon>
+      <LastGenOutput>OldDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

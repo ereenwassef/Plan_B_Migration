@@ -1,0 +1,2545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Plan_BModelStoreContainer" CdmEntityContainer="Plan_BEntities">
+    <EntitySetMapping Name="C__Products">
+      <EntityTypeMapping TypeName="Plan_BModel.C__Products">
+        <MappingFragment StoreEntitySet="__Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Cost_With_Tax" ColumnName="Cost_With_Tax" />
+          <ScalarProperty Name="Cost_With_Tax_Details" ColumnName="Cost_With_Tax_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Banks">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Banks">
+        <MappingFragment StoreEntitySet="Acc_Banks">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Account_Name" ColumnName="Account_Name" />
+          <ScalarProperty Name="Account_Number" ColumnName="Account_Number" />
+          <ScalarProperty Name="Swift_Code" ColumnName="Swift_Code" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Compny_Balance">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Compny_Balance">
+        <MappingFragment StoreEntitySet="Acc_Compny_Balance">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Is_Bank" ColumnName="Is_Bank" />
+          <ScalarProperty Name="Treasury_Bank_ID" ColumnName="Treasury_Bank_ID" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Money_Type_ID" ColumnName="Money_Type_ID" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Items">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Items">
+        <MappingFragment StoreEntitySet="Acc_Items">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Items_Main">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Items_Main">
+        <MappingFragment StoreEntitySet="Acc_Items_Main">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Items_Sub">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Items_Sub">
+        <MappingFragment StoreEntitySet="Acc_Items_Sub">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Item_Main_ID" ColumnName="Item_Main_ID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Main_Expense">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Main_Expense">
+        <MappingFragment StoreEntitySet="Acc_Main_Expense">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Main_Item_ID" ColumnName="Main_Item_ID" />
+          <ScalarProperty Name="Sub_Item_ID" ColumnName="Sub_Item_ID" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Default_Price" ColumnName="Default_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Main_Income">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Main_Income">
+        <MappingFragment StoreEntitySet="Acc_Main_Income">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Main_Item_ID" ColumnName="Main_Item_ID" />
+          <ScalarProperty Name="Sub_Item_ID" ColumnName="Sub_Item_ID" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Default_Price" ColumnName="Default_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Money_Type">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Money_Type">
+        <MappingFragment StoreEntitySet="Acc_Money_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Sub_Expense">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Sub_Expense">
+        <MappingFragment StoreEntitySet="Acc_Sub_Expense">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Main_Expense_ID" ColumnName="Main_Expense_ID" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Default_Price" ColumnName="Default_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Sub_Income">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Sub_Income">
+        <MappingFragment StoreEntitySet="Acc_Sub_Income">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Main_Income_ID" ColumnName="Main_Income_ID" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Default_Price" ColumnName="Default_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Treasury">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Treasury">
+        <MappingFragment StoreEntitySet="Acc_Treasury">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Treasury_Bank_Transactions">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Treasury_Bank_Transactions">
+        <MappingFragment StoreEntitySet="Acc_Treasury_Bank_Transactions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Transaction_By" ColumnName="Transaction_By" />
+          <ScalarProperty Name="Is_Bank" ColumnName="Is_Bank" />
+          <ScalarProperty Name="Treasury_Bank_ID" ColumnName="Treasury_Bank_ID" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Item_Main_ID" ColumnName="Item_Main_ID" />
+          <ScalarProperty Name="Item_Sub_ID" ColumnName="Item_Sub_ID" />
+          <ScalarProperty Name="Is_Expense" ColumnName="Is_Expense" />
+          <ScalarProperty Name="Income_Amount" ColumnName="Income_Amount" />
+          <ScalarProperty Name="Expense_Amount" ColumnName="Expense_Amount" />
+          <ScalarProperty Name="Main_Item_ID" ColumnName="Main_Item_ID" />
+          <ScalarProperty Name="Sub_Item_ID" ColumnName="Sub_Item_ID" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_User_Transaction_Type">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_User_Transaction_Type">
+        <MappingFragment StoreEntitySet="Acc_User_Transaction_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Users">
+      <EntityTypeMapping TypeName="Plan_BModel.Acc_Users">
+        <MappingFragment StoreEntitySet="Acc_Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Treasury_Bank_ID" ColumnName="Treasury_Bank_ID" />
+          <ScalarProperty Name="Is_Bank" ColumnName="Is_Bank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activated_Distributors">
+      <EntityTypeMapping TypeName="Plan_BModel.Activated_Distributors">
+        <MappingFragment StoreEntitySet="Activated_Distributors">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Dist_ID" ColumnName="Dist_ID" />
+          <ScalarProperty Name="Activated_By_ID" ColumnName="Activated_By_ID" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Admin_History">
+        <MappingFragment StoreEntitySet="Admin_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Last_Login" ColumnName="Last_Login" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin_Menus">
+      <EntityTypeMapping TypeName="Plan_BModel.Admin_Menus">
+        <MappingFragment StoreEntitySet="Admin_Menus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="Menu_Order" ColumnName="Menu_Order" />
+          <ScalarProperty Name="Is_Admin" ColumnName="Is_Admin" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin_User_Menus">
+      <EntityTypeMapping TypeName="Plan_BModel.Admin_User_Menus">
+        <MappingFragment StoreEntitySet="Admin_User_Menus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Menu_ID" ColumnName="Menu_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin_User_Pages">
+      <EntityTypeMapping TypeName="Plan_BModel.Admin_User_Pages">
+        <MappingFragment StoreEntitySet="Admin_User_Pages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Page_ID" ColumnName="Page_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Administrator_Type">
+      <EntityTypeMapping TypeName="Plan_BModel.Administrator_Type">
+        <MappingFragment StoreEntitySet="Administrator_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Administrators">
+      <EntityTypeMapping TypeName="Plan_BModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrators">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Is_First" ColumnName="Is_First" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Available_Job">
+      <EntityTypeMapping TypeName="Plan_BModel.Available_Job">
+        <MappingFragment StoreEntitySet="Available_Job">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_AR" ColumnName="Name_AR" />
+          <ScalarProperty Name="Name_En" ColumnName="Name_En" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Balance_Coupons">
+      <EntityTypeMapping TypeName="Plan_BModel.Balance_Coupons">
+        <MappingFragment StoreEntitySet="Balance_Coupons">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="Scratch_Code" ColumnName="Scratch_Code" />
+          <ScalarProperty Name="Activated_To" ColumnName="Activated_To" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Sold_To" ColumnName="Sold_To" />
+          <ScalarProperty Name="Sold_Date" ColumnName="Sold_Date" />
+          <ScalarProperty Name="Sold_by" ColumnName="Sold_by" />
+          <ScalarProperty Name="Used_For" ColumnName="Used_For" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Best_Profit">
+      <EntityTypeMapping TypeName="Plan_BModel.Best_Profit">
+        <MappingFragment StoreEntitySet="Best_Profit">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Bounce_Date" ColumnName="Bounce_Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Candidates">
+      <EntityTypeMapping TypeName="Plan_BModel.Candidate">
+        <MappingFragment StoreEntitySet="Candidate">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+          <ScalarProperty Name="Addreess" ColumnName="Addreess" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MilitaryStatus" ColumnName="MilitaryStatus" />
+          <ScalarProperty Name="FatherJob" ColumnName="FatherJob" />
+          <ScalarProperty Name="MotherJob" ColumnName="MotherJob" />
+          <ScalarProperty Name="GeneralServiceStatus" ColumnName="GeneralServiceStatus" />
+          <ScalarProperty Name="FirstUniversityDegree" ColumnName="FirstUniversityDegree" />
+          <ScalarProperty Name="University" ColumnName="University" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="FacultyGrade" ColumnName="FacultyGrade" />
+          <ScalarProperty Name="GraduationYear" ColumnName="GraduationYear" />
+          <ScalarProperty Name="GraduationProject" ColumnName="GraduationProject" />
+          <ScalarProperty Name="Lang1" ColumnName="Lang1" />
+          <ScalarProperty Name="Lang1Deg" ColumnName="Lang1Deg" />
+          <ScalarProperty Name="Lang2" ColumnName="Lang2" />
+          <ScalarProperty Name="Lang2Deg" ColumnName="Lang2Deg" />
+          <ScalarProperty Name="Lang3" ColumnName="Lang3" />
+          <ScalarProperty Name="Lang3Deg" ColumnName="Lang3Deg" />
+          <ScalarProperty Name="CurrJobTitle" ColumnName="CurrJobTitle" />
+          <ScalarProperty Name="CurrEmployer" ColumnName="CurrEmployer" />
+          <ScalarProperty Name="CurrStartDate" ColumnName="CurrStartDate" />
+          <ScalarProperty Name="CurrEndDate" ColumnName="CurrEndDate" />
+          <ScalarProperty Name="CurrJobDesc" ColumnName="CurrJobDesc" />
+          <ScalarProperty Name="CurrJobBasicSalary" ColumnName="CurrJobBasicSalary" />
+          <ScalarProperty Name="CurrJobSalaryBonus" ColumnName="CurrJobSalaryBonus" />
+          <ScalarProperty Name="PrevJobTitle1" ColumnName="PrevJobTitle1" />
+          <ScalarProperty Name="PrevEmployer1" ColumnName="PrevEmployer1" />
+          <ScalarProperty Name="PrevStartDate1" ColumnName="PrevStartDate1" />
+          <ScalarProperty Name="PrevEndDate1" ColumnName="PrevEndDate1" />
+          <ScalarProperty Name="PrevJobDesc1" ColumnName="PrevJobDesc1" />
+          <ScalarProperty Name="PrevJobTitle2" ColumnName="PrevJobTitle2" />
+          <ScalarProperty Name="PrevEmployer2" ColumnName="PrevEmployer2" />
+          <ScalarProperty Name="PrevStartDate2" ColumnName="PrevStartDate2" />
+          <ScalarProperty Name="PrevEndDate2" ColumnName="PrevEndDate2" />
+          <ScalarProperty Name="PrevJobDesc2" ColumnName="PrevJobDesc2" />
+          <ScalarProperty Name="ExperienceYears" ColumnName="ExperienceYears" />
+          <ScalarProperty Name="ComputerSkills" ColumnName="ComputerSkills" />
+          <ScalarProperty Name="Certificate" ColumnName="Certificate" />
+          <ScalarProperty Name="Availability" ColumnName="Availability" />
+          <ScalarProperty Name="JobCountry" ColumnName="JobCountry" />
+          <ScalarProperty Name="BankOfferdJob_ID" ColumnName="BankOfferdJob_ID" />
+          <ScalarProperty Name="JobField1" ColumnName="JobField1" />
+          <ScalarProperty Name="JobField2" ColumnName="JobField2" />
+          <ScalarProperty Name="SalaryAmount" ColumnName="SalaryAmount" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="CVPath" ColumnName="CVPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cashing_Balance_Request">
+      <EntityTypeMapping TypeName="Plan_BModel.Cashing_Balance_Request">
+        <MappingFragment StoreEntitySet="Cashing_Balance_Request">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+          <ScalarProperty Name="Requested_Amount" ColumnName="Requested_Amount" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="Paid_By" ColumnName="Paid_By" />
+          <ScalarProperty Name="Paid_Date" ColumnName="Paid_Date" />
+          <ScalarProperty Name="Payment_Gov_ID" ColumnName="Payment_Gov_ID" />
+          <ScalarProperty Name="Un_Paid" ColumnName="Un_Paid" />
+          <ScalarProperty Name="Un_Paid_Date" ColumnName="Un_Paid_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Challenges">
+      <EntityTypeMapping TypeName="Plan_BModel.Challenge">
+        <MappingFragment StoreEntitySet="Challenges">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Types" ColumnName="Types" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="Plan_BModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CITY_AR" ColumnName="CITY_AR" />
+          <ScalarProperty Name="CITY_EN" ColumnName="CITY_EN" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commissions">
+      <EntityTypeMapping TypeName="Plan_BModel.Commission">
+        <MappingFragment StoreEntitySet="Commissions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Commission1" ColumnName="Commission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="Plan_BModel.Country">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Service">
+      <EntityTypeMapping TypeName="Plan_BModel.Customer_Service">
+        <MappingFragment StoreEntitySet="Customer_Service">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Is_Done" ColumnName="Is_Done" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Service_Report">
+      <EntityTypeMapping TypeName="Plan_BModel.Customer_Service_Report">
+        <MappingFragment StoreEntitySet="Customer_Service_Report">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Referrer_ID" ColumnName="Referrer_ID" />
+          <ScalarProperty Name="The_Challenge" ColumnName="The_Challenge" />
+          <ScalarProperty Name="The_Response" ColumnName="The_Response" />
+          <ScalarProperty Name="Means_Of_Communication_ID" ColumnName="Means_Of_Communication_ID" />
+          <ScalarProperty Name="Challenges_ID" ColumnName="Challenges_ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="By_Admin_ID" ColumnName="By_Admin_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Daily_Follow">
+      <EntityTypeMapping TypeName="Plan_BModel.Daily_Follow">
+        <MappingFragment StoreEntitySet="Daily_Follow">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Lead_Name" ColumnName="Lead_Name" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+          <ScalarProperty Name="Invitation_Type_ID" ColumnName="Invitation_Type_ID" />
+          <ScalarProperty Name="Invitation_Date" ColumnName="Invitation_Date" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Master_ID" ColumnName="Master_ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Daily_Follow_Invetation_Type">
+      <EntityTypeMapping TypeName="Plan_BModel.Daily_Follow_Invetation_Type">
+        <MappingFragment StoreEntitySet="Daily_Follow_Invetation_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diploma_11">
+      <EntityTypeMapping TypeName="Plan_BModel.Diploma_11">
+        <MappingFragment StoreEntitySet="Diploma_11">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diploma_Attendance_Type">
+      <EntityTypeMapping TypeName="Plan_BModel.Diploma_Attendance_Type">
+        <MappingFragment StoreEntitySet="Diploma_Attendance_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tilte" ColumnName="Tilte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diploma_Cards">
+      <EntityTypeMapping TypeName="Plan_BModel.Diploma_Cards">
+        <MappingFragment StoreEntitySet="Diploma_Cards">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Diploma_ID" ColumnName="Diploma_ID" />
+          <ScalarProperty Name="Diploma_BarCode" ColumnName="Diploma_BarCode" />
+          <ScalarProperty Name="Is_Delivered" ColumnName="Is_Delivered" />
+          <ScalarProperty Name="Delivered_By" ColumnName="Delivered_By" />
+          <ScalarProperty Name="Delivery_Date" ColumnName="Delivery_Date" />
+          <ScalarProperty Name="Is_Partner" ColumnName="Is_Partner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diploma_Details">
+      <EntityTypeMapping TypeName="Plan_BModel.Diploma_Details">
+        <MappingFragment StoreEntitySet="Diploma_Details">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Diploma_ID" ColumnName="Diploma_ID" />
+          <ScalarProperty Name="Course_Location_ID" ColumnName="Course_Location_ID" />
+          <ScalarProperty Name="Attendance_Date" ColumnName="Attendance_Date" />
+          <ScalarProperty Name="Number_Of_Dates" ColumnName="Number_Of_Dates" />
+          <ScalarProperty Name="Instructor_ID" ColumnName="Instructor_ID" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Available_Seats" ColumnName="Available_Seats" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Starting_Date" ColumnName="Starting_Date" />
+          <ScalarProperty Name="Allowed_Gov_ID" ColumnName="Allowed_Gov_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diploma_Grades">
+      <EntityTypeMapping TypeName="Plan_BModel.Diploma_Grades">
+        <MappingFragment StoreEntitySet="Diploma_Grades">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diploma_Instructors">
+      <EntityTypeMapping TypeName="Plan_BModel.Diploma_Instructors">
+        <MappingFragment StoreEntitySet="Diploma_Instructors">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diploma_Location">
+      <EntityTypeMapping TypeName="Plan_BModel.Diploma_Location">
+        <MappingFragment StoreEntitySet="Diploma_Location">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Place_Name" ColumnName="Place_Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Students_Count" ColumnName="Students_Count" />
+          <ScalarProperty Name="Account_Manger_Name" ColumnName="Account_Manger_Name" />
+          <ScalarProperty Name="Account_Manger_Phone" ColumnName="Account_Manger_Phone" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diplomas">
+      <EntityTypeMapping TypeName="Plan_BModel.Diploma">
+        <MappingFragment StoreEntitySet="Diplomas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Service_ID" ColumnName="Service_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dist_Ranks">
+      <EntityTypeMapping TypeName="Plan_BModel.Dist_Ranks">
+        <MappingFragment StoreEntitySet="Dist_Ranks">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Level_Status" ColumnName="Level_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dist_Rankss">
+      <EntityTypeMapping TypeName="Plan_BModel.Dist_Rankss">
+        <MappingFragment StoreEntitySet="Dist_Rankss">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Level_Status" ColumnName="Level_Status" />
+          <ScalarProperty Name="Right_Side" ColumnName="Right_Side" />
+          <ScalarProperty Name="Left_Side" ColumnName="Left_Side" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Reward" ColumnName="Reward" />
+          <ScalarProperty Name="Sponsor" ColumnName="Sponsor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dist_Ref">
+      <EntityTypeMapping TypeName="Plan_BModel.Dist_Ref">
+        <MappingFragment StoreEntitySet="Dist_Ref">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Registration_Method" ColumnName="Registration_Method" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Activation_2016" ColumnName="Activation_2016" />
+          <ScalarProperty Name="Guide_ID" ColumnName="Guide_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Authorization_Doc">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Authorization_Doc">
+        <MappingFragment StoreEntitySet="Distributor_Authorization_Doc">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Doc_Path" ColumnName="Doc_Path" />
+          <ScalarProperty Name="Upload_Date" ColumnName="Upload_Date" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Browser_Cookie">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Browser_Cookie">
+        <MappingFragment StoreEntitySet="Distributor_Browser_Cookie">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Browser_Info" ColumnName="Browser_Info" />
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Diploma_Referrer_Gold">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Diploma_Referrer_Gold">
+        <MappingFragment StoreEntitySet="Distributor_Diploma_Referrer_Gold">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Is_Registered_To_Diploma" ColumnName="Is_Registered_To_Diploma" />
+          <ScalarProperty Name="Diploma_ID" ColumnName="Diploma_ID" />
+          <ScalarProperty Name="Is_Confirmed" ColumnName="Is_Confirmed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Login_courses">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Login_courses">
+        <MappingFragment StoreEntitySet="Distributor_Login_courses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Last_Login" ColumnName="Last_Login" />
+          <ScalarProperty Name="course" ColumnName="course" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Login_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Login_History">
+        <MappingFragment StoreEntitySet="Distributor_Login_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Last_Login" ColumnName="Last_Login" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_National_ID">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_National_ID">
+        <MappingFragment StoreEntitySet="Distributor_National_ID">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="National_ID_Front" ColumnName="National_ID_Front" />
+          <ScalarProperty Name="National_ID_Back" ColumnName="National_ID_Back" />
+          <ScalarProperty Name="Upload_Date" ColumnName="Upload_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Password">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Password">
+        <MappingFragment StoreEntitySet="Distributor_Password">
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Reset_Token" ColumnName="Reset_Token" />
+          <ScalarProperty Name="Password_Updateable" ColumnName="Password_Updateable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Pending_Activation">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Pending_Activation">
+        <MappingFragment StoreEntitySet="Distributor_Pending_Activation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="New_Dist_ID" ColumnName="New_Dist_ID" />
+          <ScalarProperty Name="Subscription_Date" ColumnName="Subscription_Date" />
+          <ScalarProperty Name="Subscribed_By" ColumnName="Subscribed_By" />
+          <ScalarProperty Name="Nearst_NS_ID" ColumnName="Nearst_NS_ID" />
+          <ScalarProperty Name="Is_Activated" ColumnName="Is_Activated" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="Activated_By_ID" ColumnName="Activated_By_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Products">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Products">
+        <MappingFragment StoreEntitySet="Distributor_Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+          <ScalarProperty Name="IS_Delivered" ColumnName="IS_Delivered" />
+          <ScalarProperty Name="Delivery_Date" ColumnName="Delivery_Date" />
+          <ScalarProperty Name="Is_Main" ColumnName="Is_Main" />
+          <ScalarProperty Name="Is_Done" ColumnName="Is_Done" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Relatives">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Relatives">
+        <MappingFragment StoreEntitySet="Distributor_Relatives">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Relative_Name" ColumnName="Relative_Name" />
+          <ScalarProperty Name="Kinship_Degree_ID" ColumnName="Kinship_Degree_ID" />
+          <ScalarProperty Name="Relative_Birth_Date" ColumnName="Relative_Birth_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Serial_Paswword">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Serial_Paswword">
+        <MappingFragment StoreEntitySet="Distributor_Serial_Paswword">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Reset_Token" ColumnName="Reset_Token" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="IS_Changed" ColumnName="IS_Changed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributor_Token">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor_Token">
+        <MappingFragment StoreEntitySet="Distributor_Token">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+          <ScalarProperty Name="Is_Used" ColumnName="Is_Used" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributor">
+        <MappingFragment StoreEntitySet="Distributors">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Level_Status" ColumnName="Level_Status" />
+          <ScalarProperty Name="Upline_ID" ColumnName="Upline_ID" />
+          <ScalarProperty Name="Upline_Join_Level" ColumnName="Upline_Join_Level" />
+          <ScalarProperty Name="Upline_History_ID" ColumnName="Upline_History_ID" />
+          <ScalarProperty Name="Upline_History_Names" ColumnName="Upline_History_Names" />
+          <ScalarProperty Name="Upline_Branch_Join_Level" ColumnName="Upline_Branch_Join_Level" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Work_Zone" ColumnName="Work_Zone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Referrer_ID" ColumnName="Referrer_ID" />
+          <ScalarProperty Name="Membership_Status_ID" ColumnName="Membership_Status_ID" />
+          <ScalarProperty Name="Country_ID" ColumnName="Country_ID" />
+          <ScalarProperty Name="Registration_Method" ColumnName="Registration_Method" />
+          <ScalarProperty Name="CanTransferAmount" ColumnName="CanTransferAmount" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Guide_ID" ColumnName="Guide_ID" />
+          <ScalarProperty Name="Street_Name" ColumnName="Street_Name" />
+          <ScalarProperty Name="Building_No" ColumnName="Building_No" />
+          <ScalarProperty Name="Floor_No" ColumnName="Floor_No" />
+          <ScalarProperty Name="Flat_No" ColumnName="Flat_No" />
+          <ScalarProperty Name="Delegated_Dist_ID" ColumnName="Delegated_Dist_ID" />
+          <ScalarProperty Name="Master_Level" ColumnName="Master_Level" />
+          <ScalarProperty Name="Line_Number" ColumnName="Line_Number" />
+          <ScalarProperty Name="Hand_Side" ColumnName="Hand_Side" />
+          <ScalarProperty Name="National_ID_Photo" ColumnName="National_ID_Photo" />
+          <ScalarProperty Name="Account_Type" ColumnName="Account_Type" />
+          <ScalarProperty Name="Name_AR" ColumnName="Name_AR" />
+          <ScalarProperty Name="Renewal" ColumnName="Renewal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Account_Balance">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Account_Balance">
+        <MappingFragment StoreEntitySet="Distributors_Account_Balance">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NS_Transaction_ID" ColumnName="NS_Transaction_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Account_Balance_Sing_Up">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Account_Balance_Sing_Up">
+        <MappingFragment StoreEntitySet="Distributors_Account_Balance_Sing_Up">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NS_Transaction_ID" ColumnName="NS_Transaction_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Addon_Coins">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Addon_Coins">
+        <MappingFragment StoreEntitySet="Distributors_Addon_Coins">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Annual_renewal">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Annual_renewal">
+        <MappingFragment StoreEntitySet="Distributors_Annual_renewal">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="Renewal_Date" ColumnName="Renewal_Date" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Renewal_Time" ColumnName="Renewal_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Coins_Cash">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Coins_Cash">
+        <MappingFragment StoreEntitySet="Distributors_Coins_Cash">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+          <ScalarProperty Name="Coins_Amount" ColumnName="Coins_Amount" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="Paid_By" ColumnName="Paid_By" />
+          <ScalarProperty Name="Paid_Date" ColumnName="Paid_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Deleted">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Deleted">
+        <MappingFragment StoreEntitySet="Distributors_Deleted">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="Rollback_Date" ColumnName="Rollback_Date" />
+          <ScalarProperty Name="RollBack_Amount" ColumnName="RollBack_Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Diploma">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Diploma">
+        <MappingFragment StoreEntitySet="Distributors_Diploma">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Diploma_Details_ID" ColumnName="Diploma_Details_ID" />
+          <ScalarProperty Name="Registration_Date" ColumnName="Registration_Date" />
+          <ScalarProperty Name="Grade_ID" ColumnName="Grade_ID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Diploma_Attendance_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Diploma_Attendance_History">
+        <MappingFragment StoreEntitySet="Distributors_Diploma_Attendance_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Diploma_Details_ID" ColumnName="Diploma_Details_ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Attendance_Day" ColumnName="Attendance_Day" />
+          <ScalarProperty Name="Attendance_Type" ColumnName="Attendance_Type" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Diploma_Deleted">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Diploma_Deleted">
+        <MappingFragment StoreEntitySet="Distributors_Diploma_Deleted">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Diploma_Details_ID" ColumnName="Diploma_Details_ID" />
+          <ScalarProperty Name="Registration_Date" ColumnName="Registration_Date" />
+          <ScalarProperty Name="Deleting_Date" ColumnName="Deleting_Date" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Dopay_renewal">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Dopay_renewal">
+        <MappingFragment StoreEntitySet="Distributors_Dopay_renewal">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Dopay_Activation_Date_Actual" ColumnName="Dopay_Activation_Date_Actual" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Dopay_Renewal_Date" ColumnName="Dopay_Renewal_Date" />
+          <ScalarProperty Name="Renewal_Time" ColumnName="Renewal_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Invited_Course">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Invited_Course">
+        <MappingFragment StoreEntitySet="Distributors_Invited_Course">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Invitation_Date" ColumnName="Invitation_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_PrePaidCards">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_PrePaidCards">
+        <MappingFragment StoreEntitySet="Distributors_PrePaidCards">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Request_Transfer">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Request_Transfer">
+        <MappingFragment StoreEntitySet="Distributors_Request_Transfer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+          <ScalarProperty Name="Is_Approved" ColumnName="Is_Approved" />
+          <ScalarProperty Name="Approved_Date" ColumnName="Approved_Date" />
+          <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Requests">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Requests">
+        <MappingFragment StoreEntitySet="Distributors_Requests">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Requests_photo" ColumnName="Requests_photo" />
+          <ScalarProperty Name="Requests_ID" ColumnName="Requests_ID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Upload_Date" ColumnName="Upload_Date" />
+          <ScalarProperty Name="by_Admin" ColumnName="by_Admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Summit_Coins">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Summit_Coins">
+        <MappingFragment StoreEntitySet="Distributors_Summit_Coins">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Is_Used" ColumnName="Is_Used" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Temp">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Temp">
+        <MappingFragment StoreEntitySet="Distributors_Temp">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Level_Status" ColumnName="Level_Status" />
+          <ScalarProperty Name="Upline_ID" ColumnName="Upline_ID" />
+          <ScalarProperty Name="Upline_Join_Level" ColumnName="Upline_Join_Level" />
+          <ScalarProperty Name="Upline_History_ID" ColumnName="Upline_History_ID" />
+          <ScalarProperty Name="Upline_History_Names" ColumnName="Upline_History_Names" />
+          <ScalarProperty Name="Upline_Branch_Join_Level" ColumnName="Upline_Branch_Join_Level" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="Reset_Token" ColumnName="Reset_Token" />
+          <ScalarProperty Name="Password_Updateable" ColumnName="Password_Updateable" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Referrer_ID" ColumnName="Referrer_ID" />
+          <ScalarProperty Name="Membership_Status_ID" ColumnName="Membership_Status_ID" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Transaction_Done" ColumnName="Transaction_Done" />
+          <ScalarProperty Name="Country_ID" ColumnName="Country_ID" />
+          <ScalarProperty Name="Sponsor_ID" ColumnName="Sponsor_ID" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Street_Name" ColumnName="Street_Name" />
+          <ScalarProperty Name="Building_No" ColumnName="Building_No" />
+          <ScalarProperty Name="Floor_No" ColumnName="Floor_No" />
+          <ScalarProperty Name="Flat_No" ColumnName="Flat_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Training">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Training">
+        <MappingFragment StoreEntitySet="Distributors_Training">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Diploma_Details_ID" ColumnName="Diploma_Details_ID" />
+          <ScalarProperty Name="Registration_Date" ColumnName="Registration_Date" />
+          <ScalarProperty Name="Grade_ID" ColumnName="Grade_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Training_Attendance_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Training_Attendance_History">
+        <MappingFragment StoreEntitySet="Distributors_Training_Attendance_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Diploma_Details_ID" ColumnName="Diploma_Details_ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Attendance_Day" ColumnName="Attendance_Day" />
+          <ScalarProperty Name="Attendance_Type" ColumnName="Attendance_Type" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dopays">
+      <EntityTypeMapping TypeName="Plan_BModel.Dopay">
+        <MappingFragment StoreEntitySet="Dopay">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Dopay_ID" ColumnName="Dopay_ID" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Dopay_Is_Active" ColumnName="Dopay_Is_Active" />
+          <ScalarProperty Name="Dopay_Activation_Date" ColumnName="Dopay_Activation_Date" />
+          <ScalarProperty Name="Dopay_Type" ColumnName="Dopay_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dopay_Activation">
+      <EntityTypeMapping TypeName="Plan_BModel.Dopay_Activation">
+        <MappingFragment StoreEntitySet="Dopay_Activation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+          <ScalarProperty Name="Request_Cost" ColumnName="Request_Cost" />
+          <ScalarProperty Name="IS_Done" ColumnName="IS_Done" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dopay_close">
+      <EntityTypeMapping TypeName="Plan_BModel.dopay_close">
+        <MappingFragment StoreEntitySet="dopay_close">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Dopay_ID" ColumnName="Dopay_ID" />
+          <ScalarProperty Name="Dopay_Activation_Date" ColumnName="Dopay_Activation_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DynamicPages">
+      <EntityTypeMapping TypeName="Plan_BModel.DynamicPage">
+        <MappingFragment StoreEntitySet="DynamicPages">
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="PageBrowserTitle" ColumnName="PageBrowserTitle" />
+          <ScalarProperty Name="PageMainTitle" ColumnName="PageMainTitle" />
+          <ScalarProperty Name="PageMainTitleIcon" ColumnName="PageMainTitleIcon" />
+          <ScalarProperty Name="PageMainPrgrph" ColumnName="PageMainPrgrph" />
+          <ScalarProperty Name="PagePhotoMainPrgrph" ColumnName="PagePhotoMainPrgrph" />
+          <ScalarProperty Name="PagePhotoMainPrgrphLocID" ColumnName="PagePhotoMainPrgrphLocID" />
+          <ScalarProperty Name="PagePhotoCaption" ColumnName="PagePhotoCaption" />
+          <ScalarProperty Name="PageDateAdd" ColumnName="PageDateAdd" />
+          <ScalarProperty Name="PageLayoutCols" ColumnName="PageLayoutCols" />
+          <ScalarProperty Name="FKLayoutID" ColumnName="FKLayoutID" />
+          <ScalarProperty Name="FKMenuID" ColumnName="FKMenuID" />
+          <ScalarProperty Name="PageMainTitleAr" ColumnName="PageMainTitleAr" />
+          <ScalarProperty Name="PageMainPrgrphAr" ColumnName="PageMainPrgrphAr" />
+          <ScalarProperty Name="PageBrowserTitleAr" ColumnName="PageBrowserTitleAr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Easy_pay_Acc">
+      <EntityTypeMapping TypeName="Plan_BModel.Easy_pay_Acc">
+        <MappingFragment StoreEntitySet="Easy_pay_Acc">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="National_ID_No" ColumnName="National_ID_No" />
+          <ScalarProperty Name="Card_ID_No" ColumnName="Card_ID_No" />
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Easy_pay_cards">
+      <EntityTypeMapping TypeName="Plan_BModel.Easy_pay_cards">
+        <MappingFragment StoreEntitySet="Easy_pay_cards">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Name_AR" ColumnName="Name_AR" />
+          <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+          <ScalarProperty Name="Card_ID" ColumnName="Card_ID" />
+          <ScalarProperty Name="National_ID_No" ColumnName="National_ID_No" />
+          <ScalarProperty Name="Card_ID_No" ColumnName="Card_ID_No" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Elite_Category">
+      <EntityTypeMapping TypeName="Plan_BModel.Elite_Category">
+        <MappingFragment StoreEntitySet="Elite_Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Elite_Comments">
+      <EntityTypeMapping TypeName="Plan_BModel.Elite_Comments">
+        <MappingFragment StoreEntitySet="Elite_Comments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Elite_Brands_Place_ID" ColumnName="Elite_Brands_Place_ID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Comment_Date" ColumnName="Comment_Date" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Is_Approved" ColumnName="Is_Approved" />
+          <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Elite_Place_Branchs">
+      <EntityTypeMapping TypeName="Plan_BModel.Elite_Place_Branchs">
+        <MappingFragment StoreEntitySet="Elite_Place_Branchs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Elite_Place_ID" ColumnName="Elite_Place_ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Elite_Place_Images">
+      <EntityTypeMapping TypeName="Plan_BModel.Elite_Place_Images">
+        <MappingFragment StoreEntitySet="Elite_Place_Images">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Place_ID" ColumnName="Place_ID" />
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Elite_Places">
+      <EntityTypeMapping TypeName="Plan_BModel.Elite_Places">
+        <MappingFragment StoreEntitySet="Elite_Places">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="FaceBook" ColumnName="FaceBook" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event_Distributor_Relatives">
+      <EntityTypeMapping TypeName="Plan_BModel.Event_Distributor_Relatives">
+        <MappingFragment StoreEntitySet="Event_Distributor_Relatives">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Relative_Name" ColumnName="Relative_Name" />
+          <ScalarProperty Name="Relative_Rank" ColumnName="Relative_Rank" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event_Valid_Distributors">
+      <EntityTypeMapping TypeName="Plan_BModel.Event_Valid_Distributors">
+        <MappingFragment StoreEntitySet="Event_Valid_Distributors">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventCalendars">
+      <EntityTypeMapping TypeName="Plan_BModel.EventCalendar">
+        <MappingFragment StoreEntitySet="EventCalendar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="EventHeader" ColumnName="EventHeader" />
+          <ScalarProperty Name="EventDescription" ColumnName="EventDescription" />
+          <ScalarProperty Name="Admin_id" ColumnName="Admin_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="Plan_BModel.Event">
+        <MappingFragment StoreEntitySet="Events">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Available_Seats" ColumnName="Available_Seats" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events_Ticket_Holders">
+      <EntityTypeMapping TypeName="Plan_BModel.Events_Ticket_Holders">
+        <MappingFragment StoreEntitySet="Events_Ticket_Holders">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Event_ID" ColumnName="Event_ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Tickets_Count" ColumnName="Tickets_Count" />
+          <ScalarProperty Name="Total_Cost" ColumnName="Total_Cost" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="Is_Delivered" ColumnName="Is_Delivered" />
+          <ScalarProperty Name="Delivered_By" ColumnName="Delivered_By" />
+          <ScalarProperty Name="Delivery_Date" ColumnName="Delivery_Date" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Subscription_Type" ColumnName="Subscription_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fawry_Payment">
+      <EntityTypeMapping TypeName="Plan_BModel.Fawry_Payment">
+        <MappingFragment StoreEntitySet="Fawry_Payment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Order_Amount" ColumnName="Order_Amount" />
+          <ScalarProperty Name="Order_Point" ColumnName="Order_Point" />
+          <ScalarProperty Name="Paid_Amount" ColumnName="Paid_Amount" />
+          <ScalarProperty Name="Paid_point" ColumnName="Paid_point" />
+          <ScalarProperty Name="Creation_date" ColumnName="Creation_date" />
+          <ScalarProperty Name="Update_date" ColumnName="Update_date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Fawry_Ref_No" ColumnName="Fawry_Ref_No" />
+          <ScalarProperty Name="Fawry_No" ColumnName="Fawry_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GalleryLists">
+      <EntityTypeMapping TypeName="Plan_BModel.GalleryList">
+        <MappingFragment StoreEntitySet="GalleryList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Added_Date" ColumnName="Added_Date" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GalleryPhotos">
+      <EntityTypeMapping TypeName="Plan_BModel.GalleryPhoto">
+        <MappingFragment StoreEntitySet="GalleryPhotos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Photo_Path" ColumnName="Photo_Path" />
+          <ScalarProperty Name="GalleryListID" ColumnName="GalleryListID" />
+          <ScalarProperty Name="Photo_Text" ColumnName="Photo_Text" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Photo_Path_Small" ColumnName="Photo_Path_Small" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Governorates">
+      <EntityTypeMapping TypeName="Plan_BModel.Governorate">
+        <MappingFragment StoreEntitySet="Governorate">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_AR" ColumnName="Name_AR" />
+          <ScalarProperty Name="Name_EN" ColumnName="Name_EN" />
+          <ScalarProperty Name="Delivery_Cost" ColumnName="Delivery_Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HealthCare_News">
+      <EntityTypeMapping TypeName="Plan_BModel.HealthCare_News">
+        <MappingFragment StoreEntitySet="HealthCare_News">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Image_Slider">
+      <EntityTypeMapping TypeName="Plan_BModel.Image_Slider">
+        <MappingFragment StoreEntitySet="Image_Slider">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Image_Text" ColumnName="Image_Text" />
+          <ScalarProperty Name="Image_Text_Ar" ColumnName="Image_Text_Ar" />
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invitations">
+      <EntityTypeMapping TypeName="Plan_BModel.Invitation">
+        <MappingFragment StoreEntitySet="Invitation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Inv_name" ColumnName="Inv_name" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Referrer_ID" ColumnName="Referrer_ID" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="done" ColumnName="done" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kinship_Degree">
+      <EntityTypeMapping TypeName="Plan_BModel.Kinship_Degree">
+        <MappingFragment StoreEntitySet="Kinship_Degree">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Labels">
+      <EntityTypeMapping TypeName="Plan_BModel.Label">
+        <MappingFragment StoreEntitySet="Labels">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="TitleStyle" ColumnName="TitleStyle" />
+          <ScalarProperty Name="DescrStyle" ColumnName="DescrStyle" />
+          <ScalarProperty Name="TitleAr" ColumnName="TitleAr" />
+          <ScalarProperty Name="DescrAr" ColumnName="DescrAr" />
+          <ScalarProperty Name="TitleStyleAr" ColumnName="TitleStyleAr" />
+          <ScalarProperty Name="DescrStyleAr" ColumnName="DescrStyleAr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Layouts">
+      <EntityTypeMapping TypeName="Plan_BModel.Layout">
+        <MappingFragment StoreEntitySet="Layouts">
+          <ScalarProperty Name="LayoutID" ColumnName="LayoutID" />
+          <ScalarProperty Name="LayoutName" ColumnName="LayoutName" />
+          <ScalarProperty Name="LayoutDesc" ColumnName="LayoutDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Level_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Level_History">
+        <MappingFragment StoreEntitySet="Level_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="UpGrade_Date" ColumnName="UpGrade_Date" />
+          <ScalarProperty Name="Old_Level" ColumnName="Old_Level" />
+          <ScalarProperty Name="New_Level" ColumnName="New_Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Level_Status_Ranks">
+      <EntityTypeMapping TypeName="Plan_BModel.Level_Status_Ranks">
+        <MappingFragment StoreEntitySet="Level_Status_Ranks">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Profit_Rate" ColumnName="Profit_Rate" />
+          <ScalarProperty Name="Silver_Profit_Rate" ColumnName="Silver_Profit_Rate" />
+          <ScalarProperty Name="Bronze_Profit_Rate" ColumnName="Bronze_Profit_Rate" />
+          <ScalarProperty Name="Leader_Ship_Points" ColumnName="Leader_Ship_Points" />
+          <ScalarProperty Name="Bronze_LeaderShip_Points" ColumnName="Bronze_LeaderShip_Points" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="Plan_BModel.Location">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Means_Of_Communication">
+      <EntityTypeMapping TypeName="Plan_BModel.Means_Of_Communication">
+        <MappingFragment StoreEntitySet="Means_Of_Communication">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Membership_Status">
+      <EntityTypeMapping TypeName="Plan_BModel.Membership_Status">
+        <MappingFragment StoreEntitySet="Membership_Status">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="Plan_BModel.Menu">
+        <MappingFragment StoreEntitySet="Menus">
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="MenuTitle" ColumnName="MenuTitle" />
+          <ScalarProperty Name="MenuTitleAr" ColumnName="MenuTitleAr" />
+          <ScalarProperty Name="MenuDesc" ColumnName="MenuDesc" />
+          <ScalarProperty Name="MenuIcon" ColumnName="MenuIcon" />
+          <ScalarProperty Name="MenuDisplay" ColumnName="MenuDisplay" />
+          <ScalarProperty Name="MenuOrder" ColumnName="MenuOrder" />
+          <ScalarProperty Name="MenuPage" ColumnName="MenuPage" />
+          <ScalarProperty Name="MenuParentID" ColumnName="MenuParentID" />
+          <ScalarProperty Name="MenuDateAdded" ColumnName="MenuDateAdded" />
+          <ScalarProperty Name="MenuIsAdmin" ColumnName="MenuIsAdmin" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="StyleAr" ColumnName="StyleAr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Network_Distributor_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Network_Distributor_History">
+        <MappingFragment StoreEntitySet="Network_Distributor_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Online_Courses_Details_ID" ColumnName="Online_Courses_Details_ID" />
+          <ScalarProperty Name="Last_Login" ColumnName="Last_Login" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Network_Video">
+      <EntityTypeMapping TypeName="Plan_BModel.Network_Video">
+        <MappingFragment StoreEntitySet="Network_Video">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_Videos" ColumnName="Name_Videos" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Instructor" ColumnName="Instructor" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News_Slider">
+      <EntityTypeMapping TypeName="Plan_BModel.News_Slider">
+        <MappingFragment StoreEntitySet="News_Slider">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Title_Ar" ColumnName="Title_Ar" />
+          <ScalarProperty Name="Image_Small_Path" ColumnName="Image_Small_Path" />
+          <ScalarProperty Name="Image_Large_Path" ColumnName="Image_Large_Path" />
+          <ScalarProperty Name="Image_alt" ColumnName="Image_alt" />
+          <ScalarProperty Name="News_Link" ColumnName="News_Link" />
+          <ScalarProperty Name="Image_Small_Desc" ColumnName="Image_Small_Desc" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NS_Activation">
+      <EntityTypeMapping TypeName="Plan_BModel.NS_Activation">
+        <MappingFragment StoreEntitySet="NS_Activation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NS_ID" ColumnName="NS_ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NS_Payments">
+      <EntityTypeMapping TypeName="Plan_BModel.NS_Payments">
+        <MappingFragment StoreEntitySet="NS_Payments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Transaction_ID" ColumnName="Transaction_ID" />
+          <ScalarProperty Name="NS_ID" ColumnName="NS_ID" />
+          <ScalarProperty Name="Paid_Amount" ColumnName="Paid_Amount" />
+          <ScalarProperty Name="By_Admin_ID" ColumnName="By_Admin_ID" />
+          <ScalarProperty Name="Payment_Method_ID" ColumnName="Payment_Method_ID" />
+          <ScalarProperty Name="Receipt_No" ColumnName="Receipt_No" />
+          <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+          <ScalarProperty Name="Is_Closed" ColumnName="Is_Closed" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NS_Starting_Balance">
+      <EntityTypeMapping TypeName="Plan_BModel.NS_Starting_Balance">
+        <MappingFragment StoreEntitySet="NS_Starting_Balance">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NS_ID" ColumnName="NS_ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Daily_Starting_Balance" ColumnName="Daily_Starting_Balance" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NS_Transactions">
+      <EntityTypeMapping TypeName="Plan_BModel.NS_Transactions">
+        <MappingFragment StoreEntitySet="NS_Transactions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NS_ID" ColumnName="NS_ID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Total_Today_Amount" ColumnName="Total_Today_Amount" />
+          <ScalarProperty Name="Transfered_To_ID" ColumnName="Transfered_To_ID" />
+          <ScalarProperty Name="Transaction_ID" ColumnName="Transaction_ID" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Due_Date" ColumnName="Due_Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NS_Is_Paid" ColumnName="NS_Is_Paid" />
+          <ScalarProperty Name="NS_Paid_Date" ColumnName="NS_Paid_Date" />
+          <ScalarProperty Name="Accountant_Is_Paid" ColumnName="Accountant_Is_Paid" />
+          <ScalarProperty Name="Accountant_Payment_Date" ColumnName="Accountant_Payment_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NS_Upgrade">
+      <EntityTypeMapping TypeName="Plan_BModel.NS_Upgrade">
+        <MappingFragment StoreEntitySet="NS_Upgrade">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Dist_ID" ColumnName="Dist_ID" />
+          <ScalarProperty Name="NS_ID" ColumnName="NS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Category">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Category">
+        <MappingFragment StoreEntitySet="Online_Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_Ar" ColumnName="Name_Ar" />
+          <ScalarProperty Name="Name_En" ColumnName="Name_En" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Courses">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Courses">
+        <MappingFragment StoreEntitySet="Online_Courses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_Ar" ColumnName="Name_Ar" />
+          <ScalarProperty Name="Name_En" ColumnName="Name_En" />
+          <ScalarProperty Name="Imge" ColumnName="Imge" />
+          <ScalarProperty Name="Number_Of_Videos" ColumnName="Number_Of_Videos" />
+          <ScalarProperty Name="Online_Category_ID" ColumnName="Online_Category_ID" />
+          <ScalarProperty Name="Online_course_Level_ID" ColumnName="Online_course_Level_ID" />
+          <ScalarProperty Name="Online_Instructor_ID" ColumnName="Online_Instructor_ID" />
+          <ScalarProperty Name="Total_hourse" ColumnName="Total_hourse" />
+          <ScalarProperty Name="Original_Price" ColumnName="Original_Price" />
+          <ScalarProperty Name="Price_After_Discount" ColumnName="Price_After_Discount" />
+          <ScalarProperty Name="Distributor_Price" ColumnName="Distributor_Price" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Courses_Details">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Courses_Details">
+        <MappingFragment StoreEntitySet="Online_Courses_Details">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Lesson_Ar" ColumnName="Lesson_Ar" />
+          <ScalarProperty Name="Lesson_En" ColumnName="Lesson_En" />
+          <ScalarProperty Name="Online_Courses_ID" ColumnName="Online_Courses_ID" />
+          <ScalarProperty Name="Is_free" ColumnName="Is_free" />
+          <ScalarProperty Name="Is_intro" ColumnName="Is_intro" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Courses_Level">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Courses_Level">
+        <MappingFragment StoreEntitySet="Online_Courses_Level">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_Ar" ColumnName="Name_Ar" />
+          <ScalarProperty Name="Name_En" ColumnName="Name_En" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Courses_Packages">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Courses_Packages">
+        <MappingFragment StoreEntitySet="Online_Courses_Packages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Packages_ID" ColumnName="Packages_ID" />
+          <ScalarProperty Name="Online_Courses_ID" ColumnName="Online_Courses_ID" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Courses_URL">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Courses_URL">
+        <MappingFragment StoreEntitySet="Online_Courses_URL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Online_Courses_ID" ColumnName="Online_Courses_ID" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Distributor_Courses">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Distributor_Courses">
+        <MappingFragment StoreEntitySet="Online_Distributor_Courses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Online_Courses_ID" ColumnName="Online_Courses_ID" />
+          <ScalarProperty Name="Select_Date" ColumnName="Select_Date" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Distributor_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Distributor_History">
+        <MappingFragment StoreEntitySet="Online_Distributor_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Online_Courses_Details_ID" ColumnName="Online_Courses_Details_ID" />
+          <ScalarProperty Name="Last_Login" ColumnName="Last_Login" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Distributor_Packages">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Distributor_Packages">
+        <MappingFragment StoreEntitySet="Online_Distributor_Packages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Packages_ID" ColumnName="Packages_ID" />
+          <ScalarProperty Name="Select_Date" ColumnName="Select_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Distributor_Status">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Distributor_Status">
+        <MappingFragment StoreEntitySet="Online_Distributor_Status">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Online_Courses_Details_ID" ColumnName="Online_Courses_Details_ID" />
+          <ScalarProperty Name="Last_Login" ColumnName="Last_Login" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Instructor">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Instructor">
+        <MappingFragment StoreEntitySet="Online_Instructor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_Ar" ColumnName="Name_Ar" />
+          <ScalarProperty Name="Name_En" ColumnName="Name_En" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Packages">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Packages">
+        <MappingFragment StoreEntitySet="Online_Packages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Packages_Name" ColumnName="Packages_Name" />
+          <ScalarProperty Name="Imge" ColumnName="Imge" />
+          <ScalarProperty Name="Original_Price" ColumnName="Original_Price" />
+          <ScalarProperty Name="Price_After_Discount" ColumnName="Price_After_Discount" />
+          <ScalarProperty Name="Distributor_Price" ColumnName="Distributor_Price" />
+          <ScalarProperty Name="No_of_Courses" ColumnName="No_of_Courses" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Payment_Parameters">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Payment_Parameters">
+        <MappingFragment StoreEntitySet="Online_Payment_Parameters">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Is_Required" ColumnName="Is_Required" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Upgrade_Packages">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Upgrade_Packages">
+        <MappingFragment StoreEntitySet="Online_Upgrade_Packages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Upgrade_Name" ColumnName="Upgrade_Name" />
+          <ScalarProperty Name="Image_URL" ColumnName="Image_URL" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Old_Package" ColumnName="Old_Package" />
+          <ScalarProperty Name="New_Package" ColumnName="New_Package" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Packages">
+      <EntityTypeMapping TypeName="Plan_BModel.Package">
+        <MappingFragment StoreEntitySet="Packages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Packages_Products">
+      <EntityTypeMapping TypeName="Plan_BModel.Packages_Products">
+        <MappingFragment StoreEntitySet="Packages_Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Package_ID" ColumnName="Package_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Partners">
+      <EntityTypeMapping TypeName="Plan_BModel.Partner">
+        <MappingFragment StoreEntitySet="Partners">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_En" ColumnName="Name_En" />
+          <ScalarProperty Name="Name_Ar" ColumnName="Name_Ar" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_Transactions_NS">
+      <EntityTypeMapping TypeName="Plan_BModel.Payment_Transactions_NS">
+        <MappingFragment StoreEntitySet="Payment_Transactions_NS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NS_ID" ColumnName="NS_ID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Total_Today_Amount" ColumnName="Total_Today_Amount" />
+          <ScalarProperty Name="Transfered_To_ID" ColumnName="Transfered_To_ID" />
+          <ScalarProperty Name="Transaction_ID" ColumnName="Transaction_ID" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Due_Date" ColumnName="Due_Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NS_Is_Paid" ColumnName="NS_Is_Paid" />
+          <ScalarProperty Name="NS_Paid_Date" ColumnName="NS_Paid_Date" />
+          <ScalarProperty Name="Accountant_Is_Paid" ColumnName="Accountant_Is_Paid" />
+          <ScalarProperty Name="Accountant_Payment_Date" ColumnName="Accountant_Payment_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Place_Branches">
+      <EntityTypeMapping TypeName="Plan_BModel.Place_Branches">
+        <MappingFragment StoreEntitySet="Place_Branches">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Place_ID" ColumnName="Place_ID" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Is_Central_Place" ColumnName="Is_Central_Place" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Place_Specialization">
+      <EntityTypeMapping TypeName="Plan_BModel.Place_Specialization">
+        <MappingFragment StoreEntitySet="Place_Specialization">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Place_Suggestions">
+      <EntityTypeMapping TypeName="Plan_BModel.Place_Suggestions">
+        <MappingFragment StoreEntitySet="Place_Suggestions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Place_Name" ColumnName="Place_Name" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Suggestion_Date" ColumnName="Suggestion_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Place_Suggestions_Admin_Reply">
+      <EntityTypeMapping TypeName="Plan_BModel.Place_Suggestions_Admin_Reply">
+        <MappingFragment StoreEntitySet="Place_Suggestions_Admin_Reply">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="Suggestion_ID" ColumnName="Suggestion_ID" />
+          <ScalarProperty Name="Reply_Text" ColumnName="Reply_Text" />
+          <ScalarProperty Name="Reply_Date" ColumnName="Reply_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Place_Ticket">
+      <EntityTypeMapping TypeName="Plan_BModel.Place_Ticket">
+        <MappingFragment StoreEntitySet="Place_Ticket">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Place_ID" ColumnName="Place_ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Ticket_Type" ColumnName="Ticket_Type" />
+          <ScalarProperty Name="Ticket_Text" ColumnName="Ticket_Text" />
+          <ScalarProperty Name="Is_Solved" ColumnName="Is_Solved" />
+          <ScalarProperty Name="Other_Phone" ColumnName="Other_Phone" />
+          <ScalarProperty Name="Health_Type_ID" ColumnName="Health_Type_ID" />
+          <ScalarProperty Name="Ticket_Date" ColumnName="Ticket_Date" />
+          <ScalarProperty Name="Closing_Date" ColumnName="Closing_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Place_Ticket_Branches">
+      <EntityTypeMapping TypeName="Plan_BModel.Place_Ticket_Branches">
+        <MappingFragment StoreEntitySet="Place_Ticket_Branches">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ticket_ID" ColumnName="Ticket_ID" />
+          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Place_Ticket_WorkFlow">
+      <EntityTypeMapping TypeName="Plan_BModel.Place_Ticket_WorkFlow">
+        <MappingFragment StoreEntitySet="Place_Ticket_WorkFlow">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ticket_ID" ColumnName="Ticket_ID" />
+          <ScalarProperty Name="Reply_Text" ColumnName="Reply_Text" />
+          <ScalarProperty Name="Reply_Date" ColumnName="Reply_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="Plan_BModel.Place">
+        <MappingFragment StoreEntitySet="Places">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Specialize_ID" ColumnName="Specialize_ID" />
+          <ScalarProperty Name="CP_Name" ColumnName="CP_Name" />
+          <ScalarProperty Name="Phone_1" ColumnName="Phone_1" />
+          <ScalarProperty Name="Phone_2" ColumnName="Phone_2" />
+          <ScalarProperty Name="Discount_Percentage" ColumnName="Discount_Percentage" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Account_Manager_Name" ColumnName="Account_Manager_Name" />
+          <ScalarProperty Name="Account_Manager_Phone" ColumnName="Account_Manager_Phone" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plan_B_Balance_Sheet">
+      <EntityTypeMapping TypeName="Plan_BModel.Plan_B_Balance_Sheet">
+        <MappingFragment StoreEntitySet="Plan_B_Balance_Sheet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction_Type" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POC_Distributor">
+      <EntityTypeMapping TypeName="Plan_BModel.POC_Distributor">
+        <MappingFragment StoreEntitySet="POC_Distributor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="POC_ID" ColumnName="POC_ID" />
+          <ScalarProperty Name="Subscription_Date" ColumnName="Subscription_Date" />
+          <ScalarProperty Name="Subscription_Cost" ColumnName="Subscription_Cost" />
+          <ScalarProperty Name="Is_Confirmed" ColumnName="Is_Confirmed" />
+          <ScalarProperty Name="Conformation_Date" ColumnName="Conformation_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POC_Temp">
+      <EntityTypeMapping TypeName="Plan_BModel.POC_Temp">
+        <MappingFragment StoreEntitySet="POC_Temp">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+          <ScalarProperty Name="Subscription_Cost" ColumnName="Subscription_Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Points">
+      <EntityTypeMapping TypeName="Plan_BModel.Point">
+        <MappingFragment StoreEntitySet="Points">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="From_Distributor" ColumnName="From_Distributor" />
+          <ScalarProperty Name="Point_Count" ColumnName="Point_Count" />
+          <ScalarProperty Name="Side" ColumnName="Side" />
+          <ScalarProperty Name="Point_Type" ColumnName="Point_Type" />
+          <ScalarProperty Name="Point_Date" ColumnName="Point_Date" />
+          <ScalarProperty Name="Is_Calculated" ColumnName="Is_Calculated" />
+          <ScalarProperty Name="Calculation_Date" ColumnName="Calculation_Date" />
+          <ScalarProperty Name="Point_Level" ColumnName="Point_Level" />
+          <ScalarProperty Name="Is_Offer" ColumnName="Is_Offer" />
+          <ScalarProperty Name="Is_Upgrade" ColumnName="Is_Upgrade" />
+          <ScalarProperty Name="Is_Flashed" ColumnName="Is_Flashed" />
+          <ScalarProperty Name="Flash_Date" ColumnName="Flash_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Print_Certificate_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Print_Certificate_History">
+        <MappingFragment StoreEntitySet="Print_Certificate_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+          <ScalarProperty Name="Certificate_ID" ColumnName="Certificate_ID" />
+          <ScalarProperty Name="Print_Date" ColumnName="Print_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Print_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Print_History">
+        <MappingFragment StoreEntitySet="Print_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Print_Type" ColumnName="Print_Type" />
+          <ScalarProperty Name="Print_Date" ColumnName="Print_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Print_Types">
+      <EntityTypeMapping TypeName="Plan_BModel.Print_Types">
+        <MappingFragment StoreEntitySet="Print_Types">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Equations">
+      <EntityTypeMapping TypeName="Plan_BModel.Product_Equations">
+        <MappingFragment StoreEntitySet="Product_Equations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Cost_of_the_company" ColumnName="Cost_of_the_company" />
+          <ScalarProperty Name="Diploma" ColumnName="Diploma" />
+          <ScalarProperty Name="B_V" ColumnName="B_V" />
+          <ScalarProperty Name="D_C" ColumnName="D_C" />
+          <ScalarProperty Name="A_L_A" ColumnName="A_L_A" />
+          <ScalarProperty Name="SMART_APP" ColumnName="SMART_APP" />
+          <ScalarProperty Name="Shipping" ColumnName="Shipping" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="Plan_BModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Product_Type_ID" ColumnName="Product_Type_ID" />
+          <ScalarProperty Name="Product_Brand_ID" ColumnName="Product_Brand_ID" />
+          <ScalarProperty Name="Cost_Points" ColumnName="Cost_Points" />
+          <ScalarProperty Name="Profit_Points" ColumnName="Profit_Points" />
+          <ScalarProperty Name="Management_Points" ColumnName="Management_Points" />
+          <ScalarProperty Name="Shipping_Points" ColumnName="Shipping_Points" />
+          <ScalarProperty Name="Redeem_Points" ColumnName="Redeem_Points" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Travel_Discount" ColumnName="Travel_Discount" />
+          <ScalarProperty Name="Total_Cost" ColumnName="Total_Cost" />
+          <ScalarProperty Name="Contract_Cost" ColumnName="Contract_Cost" />
+          <ScalarProperty Name="Is_Upgrade" ColumnName="Is_Upgrade" />
+          <ScalarProperty Name="Package_Type" ColumnName="Package_Type" />
+          <ScalarProperty Name="Is_Package" ColumnName="Is_Package" />
+          <ScalarProperty Name="Package_ID" ColumnName="Package_ID" />
+          <ScalarProperty Name="Product_Hint" ColumnName="Product_Hint" />
+          <ScalarProperty Name="Sponsor_Points" ColumnName="Sponsor_Points" />
+          <ScalarProperty Name="Summit_Coins" ColumnName="Summit_Coins" />
+          <ScalarProperty Name="Summit_Cost" ColumnName="Summit_Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profits">
+      <EntityTypeMapping TypeName="Plan_BModel.Profit">
+        <MappingFragment StoreEntitySet="Profit">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Profit1" ColumnName="Profit" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+          <ScalarProperty Name="Profit_Date" ColumnName="Profit_Date" />
+          <ScalarProperty Name="From_Distributor_ID" ColumnName="From_Distributor_ID" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="Paid_By" ColumnName="Paid_By" />
+          <ScalarProperty Name="Is_Offer" ColumnName="Is_Offer" />
+          <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+          <ScalarProperty Name="Is_Upgrade" ColumnName="Is_Upgrade" />
+          <ScalarProperty Name="Point_Type" ColumnName="Point_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profit_Distributing_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Profit_Distributing_History">
+        <MappingFragment StoreEntitySet="Profit_Distributing_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+          <ScalarProperty Name="Profit_Rate" ColumnName="Profit_Rate" />
+          <ScalarProperty Name="Membership_ID" ColumnName="Membership_ID" />
+          <ScalarProperty Name="From_Distributor_ID" ColumnName="From_Distributor_ID" />
+          <ScalarProperty Name="Is_Sponser" ColumnName="Is_Sponser" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profit_ISave_Membership">
+      <EntityTypeMapping TypeName="Plan_BModel.Profit_ISave_Membership">
+        <MappingFragment StoreEntitySet="Profit_ISave_Membership">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Profit_Diff" ColumnName="Profit_Diff" />
+          <ScalarProperty Name="Profit_Date" ColumnName="Profit_Date" />
+          <ScalarProperty Name="From_Distributor_ID" ColumnName="From_Distributor_ID" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="Paid_By" ColumnName="Paid_By" />
+          <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+          <ScalarProperty Name="Point_Type" ColumnName="Point_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profit_Payment_Type">
+      <EntityTypeMapping TypeName="Plan_BModel.Profit_Payment_Type">
+        <MappingFragment StoreEntitySet="Profit_Payment_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="Plan_BModel.Request">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Types" ColumnName="Types" />
+          <ScalarProperty Name="IS_Active" ColumnName="IS_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shipping_Details">
+      <EntityTypeMapping TypeName="Plan_BModel.Shipping_Details">
+        <MappingFragment StoreEntitySet="Shipping_Details">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Delivery_Method" ColumnName="Delivery_Method" />
+          <ScalarProperty Name="Delivery_Cost" ColumnName="Delivery_Cost" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+          <ScalarProperty Name="Shipping_Date" ColumnName="Shipping_Date" />
+          <ScalarProperty Name="Delivery_Date" ColumnName="Delivery_Date" />
+          <ScalarProperty Name="Is_Shipped" ColumnName="Is_Shipped" />
+          <ScalarProperty Name="Is_Main_Shipping" ColumnName="Is_Main_Shipping" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Is_Delivered" ColumnName="Is_Delivered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shipping_Distributor_Products">
+      <EntityTypeMapping TypeName="Plan_BModel.Shipping_Distributor_Products">
+        <MappingFragment StoreEntitySet="Shipping_Distributor_Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Shipping_Product_ID" ColumnName="Shipping_Product_ID" />
+          <ScalarProperty Name="Shipping_Details_ID" ColumnName="Shipping_Details_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shipping_Products">
+      <EntityTypeMapping TypeName="Plan_BModel.Shipping_Products">
+        <MappingFragment StoreEntitySet="Shipping_Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sponser_Offer">
+      <EntityTypeMapping TypeName="Plan_BModel.Sponser_Offer">
+        <MappingFragment StoreEntitySet="Sponser_Offer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Sponser_ID" ColumnName="Sponser_ID" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="Paid_Date" ColumnName="Paid_Date" />
+          <ScalarProperty Name="Paid_By" ColumnName="Paid_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Plan_BModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trainings">
+      <EntityTypeMapping TypeName="Plan_BModel.Training">
+        <MappingFragment StoreEntitySet="Training">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Service_ID" ColumnName="Service_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Training_Details">
+      <EntityTypeMapping TypeName="Plan_BModel.Training_Details">
+        <MappingFragment StoreEntitySet="Training_Details">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Diploma_ID" ColumnName="Diploma_ID" />
+          <ScalarProperty Name="Course_Location_ID" ColumnName="Course_Location_ID" />
+          <ScalarProperty Name="Attendance_Date" ColumnName="Attendance_Date" />
+          <ScalarProperty Name="Number_Of_Dates" ColumnName="Number_Of_Dates" />
+          <ScalarProperty Name="Instructor_ID" ColumnName="Instructor_ID" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Available_Seats" ColumnName="Available_Seats" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Travel_Cities">
+      <EntityTypeMapping TypeName="Plan_BModel.Travel_Cities">
+        <MappingFragment StoreEntitySet="Travel_Cities">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+          <ScalarProperty Name="Country_ID" ColumnName="Country_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Travel_Offer">
+      <EntityTypeMapping TypeName="Plan_BModel.Travel_Offer">
+        <MappingFragment StoreEntitySet="Travel_Offer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Cost_Points" ColumnName="Cost_Points" />
+          <ScalarProperty Name="AddValuePerson" ColumnName="AddValuePerson" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Travel_Offer_Images">
+      <EntityTypeMapping TypeName="Plan_BModel.Travel_Offer_Images">
+        <MappingFragment StoreEntitySet="Travel_Offer_Images">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Offer_ID" ColumnName="Offer_ID" />
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+          <ScalarProperty Name="Image_Title" ColumnName="Image_Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Upgrade_Temp">
+      <EntityTypeMapping TypeName="Plan_BModel.Upgrade_Temp">
+        <MappingFragment StoreEntitySet="Upgrade_Temp">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Upgrade_Date" ColumnName="Upgrade_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Upgrades">
+      <EntityTypeMapping TypeName="Plan_BModel.Upgrade">
+        <MappingFragment StoreEntitySet="Upgrades">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="New_Level_Status" ColumnName="New_Level_Status" />
+          <ScalarProperty Name="Old_Level_Status" ColumnName="Old_Level_Status" />
+          <ScalarProperty Name="Upgrade_Date" ColumnName="Upgrade_Date" />
+          <ScalarProperty Name="Commission_ID" ColumnName="Commission_ID" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="Paid_By" ColumnName="Paid_By" />
+          <ScalarProperty Name="From_Distributor_ID" ColumnName="From_Distributor_ID" />
+          <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="work_zone_area">
+      <EntityTypeMapping TypeName="Plan_BModel.work_zone_area">
+        <MappingFragment StoreEntitySet="work_zone_area">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CITY_AR" ColumnName="CITY_AR" />
+          <ScalarProperty Name="CITY_EN" ColumnName="CITY_EN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Addon_Coins_12_06_2020">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Addon_Coins_12_06_2020">
+        <MappingFragment StoreEntitySet="Distributors_Addon_Coins_12-06-2020">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Summit_Coins_12_06_2020">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Summit_Coins_12_06_2020">
+        <MappingFragment StoreEntitySet="Distributors_Summit_Coins_12-06-2020">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors_Summit_Coins_old">
+      <EntityTypeMapping TypeName="Plan_BModel.Distributors_Summit_Coins_old">
+        <MappingFragment StoreEntitySet="Distributors_Summit_Coins_old">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Free_Courses">
+      <EntityTypeMapping TypeName="Plan_BModel.Free_Courses">
+        <MappingFragment StoreEntitySet="Free_Courses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuLocations">
+      <EntityTypeMapping TypeName="Plan_BModel.MenuLocation">
+        <MappingFragment StoreEntitySet="MenuLocations">
+          <ScalarProperty Name="FKMenuID" ColumnName="FKMenuID" />
+          <ScalarProperty Name="FKLocationID" ColumnName="FKLocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="Plan_BModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Brief" ColumnName="Brief" />
+          <ScalarProperty Name="Reads" ColumnName="Reads" />
+          <ScalarProperty Name="Publish_Date" ColumnName="Publish_Date" />
+          <ScalarProperty Name="Writer_ID" ColumnName="Writer_ID" />
+          <ScalarProperty Name="Photo_Path" ColumnName="Photo_Path" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsLetters">
+      <EntityTypeMapping TypeName="Plan_BModel.NewsLetter">
+        <MappingFragment StoreEntitySet="NewsLetter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NS">
+      <EntityTypeMapping TypeName="Plan_BModel.N">
+        <MappingFragment StoreEntitySet="NS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_Distributors_Point">
+      <EntityTypeMapping TypeName="Plan_BModel.Online_Distributors_Point">
+        <MappingFragment StoreEntitySet="Online_Distributors_Point">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NS_Transaction_ID" ColumnName="NS_Transaction_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PagePrgrphs">
+      <EntityTypeMapping TypeName="Plan_BModel.PagePrgrph">
+        <MappingFragment StoreEntitySet="PagePrgrphs">
+          <ScalarProperty Name="PagePrgrphID" ColumnName="PagePrgrphID" />
+          <ScalarProperty Name="PagePrgrphTitle" ColumnName="PagePrgrphTitle" />
+          <ScalarProperty Name="PagePrgrphTitleIcon" ColumnName="PagePrgrphTitleIcon" />
+          <ScalarProperty Name="PagePrgrphDesc" ColumnName="PagePrgrphDesc" />
+          <ScalarProperty Name="PagePrgrphPhoto" ColumnName="PagePrgrphPhoto" />
+          <ScalarProperty Name="PagePrgrphPhotoLocID" ColumnName="PagePrgrphPhotoLocID" />
+          <ScalarProperty Name="PagePrgrphDateAdd" ColumnName="PagePrgrphDateAdd" />
+          <ScalarProperty Name="PagePrgrphOrder" ColumnName="PagePrgrphOrder" />
+          <ScalarProperty Name="FKPageID" ColumnName="FKPageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_Method">
+      <EntityTypeMapping TypeName="Plan_BModel.Payment_Method">
+        <MappingFragment StoreEntitySet="Payment_Method">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POCs">
+      <EntityTypeMapping TypeName="Plan_BModel.POC">
+        <MappingFragment StoreEntitySet="POC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Max_Members" ColumnName="Max_Members" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Brands">
+      <EntityTypeMapping TypeName="Plan_BModel.Product_Brands">
+        <MappingFragment StoreEntitySet="Product_Brands">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Category">
+      <EntityTypeMapping TypeName="Plan_BModel.Product_Category">
+        <MappingFragment StoreEntitySet="Product_Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products_Scratch_Cards">
+      <EntityTypeMapping TypeName="Plan_BModel.Products_Scratch_Cards">
+        <MappingFragment StoreEntitySet="Products_Scratch_Cards">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="Scratch_Serial" ColumnName="Scratch_Serial" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Product_Cost_Type_ID" ColumnName="Product_Cost_Type_ID" />
+          <ScalarProperty Name="Is_Used" ColumnName="Is_Used" />
+          <ScalarProperty Name="User_For_Distributor_ID" ColumnName="User_For_Distributor_ID" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="Sell_Date" ColumnName="Sell_Date" />
+          <ScalarProperty Name="Sell_By" ColumnName="Sell_By" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Used_From_WebSite" ColumnName="Used_From_WebSite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profit_Advanced_Network">
+      <EntityTypeMapping TypeName="Plan_BModel.Profit_Advanced_Network">
+        <MappingFragment StoreEntitySet="Profit_Advanced_Network">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Profit" ColumnName="Profit" />
+          <ScalarProperty Name="Profit_Date" ColumnName="Profit_Date" />
+          <ScalarProperty Name="From_Distributor_ID" ColumnName="From_Distributor_ID" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="Paid_By" ColumnName="Paid_By" />
+          <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profit_Profit_Diff">
+      <EntityTypeMapping TypeName="Plan_BModel.Profit_Profit_Diff">
+        <MappingFragment StoreEntitySet="Profit_Profit_Diff">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Profit" ColumnName="Profit" />
+          <ScalarProperty Name="Profit_Date" ColumnName="Profit_Date" />
+          <ScalarProperty Name="From_Distributor_ID" ColumnName="From_Distributor_ID" />
+          <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+          <ScalarProperty Name="Paid_By" ColumnName="Paid_By" />
+          <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_Receipt">
+      <EntityTypeMapping TypeName="Plan_BModel.Sales_Receipt">
+        <MappingFragment StoreEntitySet="Sales_Receipt">
+          <ScalarProperty Name="Receipt_Serial" ColumnName="Receipt_Serial" />
+          <ScalarProperty Name="Distributors_ID" ColumnName="Distributors_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Receipt_Date" ColumnName="Receipt_Date" />
+          <ScalarProperty Name="Payment_Type" ColumnName="Payment_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Testimonials">
+      <EntityTypeMapping TypeName="Plan_BModel.Testimonial">
+        <MappingFragment StoreEntitySet="Testimonial">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Comment_Date" ColumnName="Comment_Date" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Travel_Reservation">
+      <EntityTypeMapping TypeName="Plan_BModel.Travel_Reservation">
+        <MappingFragment StoreEntitySet="Travel_Reservation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Hotel_ID" ColumnName="Hotel_ID" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Child_Count" ColumnName="Child_Count" />
+          <ScalarProperty Name="Adult_Count" ColumnName="Adult_Count" />
+          <ScalarProperty Name="addition_Adult_Cont" ColumnName="addition_Adult_Cont" />
+          <ScalarProperty Name="Reservation_Cost_Before" ColumnName="Reservation_Cost_Before" />
+          <ScalarProperty Name="Reservation_Cost_After" ColumnName="Reservation_Cost_After" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Is_Confirmed" ColumnName="Is_Confirmed" />
+          <ScalarProperty Name="Confirmed_By" ColumnName="Confirmed_By" />
+          <ScalarProperty Name="Confirmation_Date" ColumnName="Confirmation_Date" />
+          <ScalarProperty Name="Travel_Offer_ID" ColumnName="Travel_Offer_ID" />
+          <ScalarProperty Name="Travel_Discount" ColumnName="Travel_Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Upgrade_Membership_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Upgrade_Membership_History">
+        <MappingFragment StoreEntitySet="Upgrade_Membership_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Old_Membership" ColumnName="Old_Membership" />
+          <ScalarProperty Name="New_Membership" ColumnName="New_Membership" />
+          <ScalarProperty Name="Paid_Amount" ColumnName="Paid_Amount" />
+          <ScalarProperty Name="Upgrade_Date" ColumnName="Upgrade_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Upgrade_Program_History">
+      <EntityTypeMapping TypeName="Plan_BModel.Upgrade_Program_History">
+        <MappingFragment StoreEntitySet="Upgrade_Program_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Distributor_ID" ColumnName="Distributor_ID" />
+          <ScalarProperty Name="Old_Program" ColumnName="Old_Program" />
+          <ScalarProperty Name="New_Program" ColumnName="New_Program" />
+          <ScalarProperty Name="Upgrade_Date" ColumnName="Upgrade_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Video_Category">
+      <EntityTypeMapping TypeName="Plan_BModel.Video_Category">
+        <MappingFragment StoreEntitySet="Video_Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Added_Date" ColumnName="Added_Date" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Videos">
+      <EntityTypeMapping TypeName="Plan_BModel.Video">
+        <MappingFragment StoreEntitySet="Videos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="Date_Modified" ColumnName="Date_Modified" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Views_Count" ColumnName="Views_Count" />
+          <ScalarProperty Name="Gallery_ID" ColumnName="Gallery_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visitors_Counter">
+      <EntityTypeMapping TypeName="Plan_BModel.Visitors_Counter">
+        <MappingFragment StoreEntitySet="Visitors_Counter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Visit_Date" ColumnName="Visit_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Votes">
+      <EntityTypeMapping TypeName="Plan_BModel.Vote">
+        <MappingFragment StoreEntitySet="Votes">
+          <ScalarProperty Name="Vote_ID" ColumnName="Vote_ID" />
+          <ScalarProperty Name="Vote_TitleAR" ColumnName="Vote_TitleAR" />
+          <ScalarProperty Name="Vote_Title" ColumnName="Vote_Title" />
+          <ScalarProperty Name="Vote_BodyAR" ColumnName="Vote_BodyAR" />
+          <ScalarProperty Name="Vote_Body" ColumnName="Vote_Body" />
+          <ScalarProperty Name="Vote_Active" ColumnName="Vote_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VotesAnswers">
+      <EntityTypeMapping TypeName="Plan_BModel.VotesAnswer">
+        <MappingFragment StoreEntitySet="VotesAnswers">
+          <ScalarProperty Name="VoteAnswer_ID" ColumnName="VoteAnswer_ID" />
+          <ScalarProperty Name="VoteAnswer_BodyAR" ColumnName="VoteAnswer_BodyAR" />
+          <ScalarProperty Name="VoteAnswer_Body" ColumnName="VoteAnswer_Body" />
+          <ScalarProperty Name="VoteAnswer_Hits" ColumnName="VoteAnswer_Hits" />
+          <ScalarProperty Name="VoteAnswer_Vote_ID" ColumnName="VoteAnswer_Vote_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
